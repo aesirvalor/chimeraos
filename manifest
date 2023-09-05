@@ -65,7 +65,6 @@ export PACKAGES="\
 	lib32-libxinerama \
 	lib32-libxcrypt-compat \
 	lib32-libva \
-	lib32-libva-intel-driver \
 	lib32-libva-vdpau-driver \
 	lib32-openal \
 	lib32-pipewire \
@@ -73,23 +72,6 @@ export PACKAGES="\
 	lib32-vulkan-icd-loader \
 	libcurl-gnutls \
 	libidn11 \
-	libretro-beetle-pce-fast \
-	libretro-beetle-psx-hw \
-	libretro-citra \
-	libretro-desmume \
-	libretro-dolphin \
-	libretro-flycast \
-	libretro-genesis-plus-gx \
-	libretro-kronos \
-	libretro-mesen-s\
-	libretro-mgba \
-	libretro-mupen64plus-next \
-	libretro-nestopia \
-	libretro-picodrive \
-	libretro-ppsspp \
-	libretro-shaders-slang \
-	libretro-snes9x \
-	libva-intel-driver \
 	libva-vdpau-driver \
 	libxcrypt-compat \
 	libxss \
@@ -123,7 +105,6 @@ export PACKAGES="\
 	sshfs \
 	steam \
 	sudo \
-	systemd-swap \
 	ttf-liberation \
 	unzip \
 	usb_modeswitch \
@@ -149,15 +130,11 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/lib32-libva-mesa-driver-23.1.6.chos1-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/lib32-mesa-23.1.6.chos1-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/lib32-mesa-vdpau-23.1.6.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/lib32-vulkan-intel-23.1.6.chos1-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/lib32-vulkan-radeon-23.1.6.chos1-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/libva-mesa-driver-23.1.6.chos1-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/mesa-23.1.6.chos1-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/mesa-vdpau-23.1.6.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/vulkan-intel-23.1.6.chos1-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/vulkan-radeon-23.1.6.chos1-2-x86_64.pkg.tar.zst \
-	https://archive.archlinux.org/repos/2023/06/28/extra/os/x86_64/libretro-pcsx2-11900-2-x86_64.pkg.tar.zst \
-	https://archive.archlinux.org/packages/l/libretro-mame/libretro-mame-85763-1-x86_64.pkg.tar.zst \
 "
 
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
@@ -217,7 +194,6 @@ export SERVICES="\
 	ryzenadj-controller \
 	sshd \
 	systemd-timesyncd \
-	swapfile \
 "
 
 export USER_SERVICES="\
@@ -289,6 +265,5 @@ postinstallhook() {
 	# force -steamdeck option in desktop mode to prevent constant steam updates
 	sed -i 's,Exec=/usr/bin/steam-runtime,Exec=/usr/bin/steam-runtime -steamdeck,' /usr/share/applications/steam.desktop
 
-	# set permissions for intel_gpu_top and mangohud
-	setcap cap_perfmon=+ep /usr/bin/intel_gpu_top
+	# set permissions for intel_gpu_top and mang
 }
