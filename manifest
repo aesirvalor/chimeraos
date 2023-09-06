@@ -150,6 +150,7 @@ export AUR_PACKAGES="\
 	frzr \
 	gamescope-plus \
 	gamescope-session-git \
+	handygccs-git \
 	hhfc-git \
 	legendary \
 	lib32-gamescope-plus \
@@ -183,6 +184,7 @@ export SERVICES="\
 	bluetooth \
 	bluetooth-workaround \
 	fstrim.timer \
+	handycon \
 	haveged \
 	home-swapfile.swap \
 	lightdm \
