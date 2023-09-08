@@ -130,14 +130,15 @@ export PACKAGES="\
 export PACKAGE_OVERRIDES="\
 	http://neroreflex.duckdns.org/linux-chimeraos-6.5.1.chos3-1-x86_64.pkg.tar.zst
 	http://neroreflex.duckdns.org/linux-chimeraos-headers-6.5.1.chos3-1-x86_64.pkg.tar.zst
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/lib32-libva-mesa-driver-23.1.6.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/lib32-mesa-23.1.6.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/lib32-mesa-vdpau-23.1.6.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/lib32-vulkan-radeon-23.1.6.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/libva-mesa-driver-23.1.6.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/mesa-23.1.6.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/mesa-vdpau-23.1.6.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.6-chos1-2/vulkan-radeon-23.1.6.chos1-2-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-libva-mesa-driver-23.1.7.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-mesa-23.1.7.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-mesa-vdpau-23.1.7.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-opencl-clover-mesa-23.1.7.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-opencl-rusticl-mesa-23.1.7.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-vulkan-mesa-layers-23.1.7.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-vulkan-radeon-23.1.7.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-vulkan-swrast-23.1.7.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-vulkan-virtio-23.1.7.chos1-1-x86_64.pkg.tar.zst \
 "
 
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
