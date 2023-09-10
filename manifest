@@ -203,6 +203,7 @@ export USER_SERVICES="\
 	chimera.service \
 	gamemoded.service \
 	ryzen-tctl \
+	steam-patch.service \
 "
 
 export FILES_TO_DELETE="\
