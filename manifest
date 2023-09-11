@@ -71,7 +71,6 @@ export PACKAGES="\
 	lib32-libva-vdpau-driver \
 	lib32-openal \
 	lib32-pipewire \
-	lib32-systemd \
 	lib32-vulkan-icd-loader \
 	libcurl-gnutls \
 	libidn11 \
@@ -139,6 +138,7 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-vulkan-radeon-23.1.7.chos1-1-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-vulkan-swrast-23.1.7.chos1-1-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-vulkan-virtio-23.1.7.chos1-1-x86_64.pkg.tar.zst \
+	https://archive.archlinux.org/packages/s/systemd/systemd-254.1-1-x86_64.pkg.tar.zst \
 "
 
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
