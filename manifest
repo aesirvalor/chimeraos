@@ -184,6 +184,7 @@ export AUR_PACKAGES="\
 	xpad-noone-dkms \
 	ryujinx-git \
 	zenergy-dkms-git \
+	openrgb-git \
 "
 
 export SERVICES="\
