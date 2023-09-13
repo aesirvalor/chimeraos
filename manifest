@@ -14,6 +14,9 @@ export KERNEL_PACKAGE="linux-chimeraos"
 export KERNEL_PACKAGE_ORIGIN="local"
 
 export PACKAGES="\
+	clang \
+	llvm \
+	lld \
 	accountsservice \
 	alsa-firmware \
 	alsa-utils \
@@ -65,7 +68,6 @@ export PACKAGES="\
 	lib32-libxinerama \
 	lib32-libxcrypt-compat \
 	lib32-libva \
-	lib32-libva-intel-driver \
 	lib32-libva-vdpau-driver \
 	lib32-openal \
 	lib32-pipewire \
@@ -73,23 +75,6 @@ export PACKAGES="\
 	lib32-vulkan-icd-loader \
 	libcurl-gnutls \
 	libidn11 \
-	libretro-beetle-pce-fast \
-	libretro-beetle-psx-hw \
-	libretro-citra \
-	libretro-desmume \
-	libretro-dolphin \
-	libretro-flycast \
-	libretro-genesis-plus-gx \
-	libretro-kronos \
-	libretro-mesen-s\
-	libretro-mgba \
-	libretro-mupen64plus-next \
-	libretro-nestopia \
-	libretro-picodrive \
-	libretro-ppsspp \
-	libretro-shaders-slang \
-	libretro-snes9x \
-	libva-intel-driver \
 	libva-vdpau-driver \
 	libxcrypt-compat \
 	libxss \
@@ -116,7 +101,6 @@ export PACKAGES="\
 	pulsemixer \
 	python \
 	python-inotify-simple \
-	retroarch \
 	rsync \
 	smbclient \
 	sof-firmware \
@@ -143,8 +127,8 @@ export PACKAGES="\
 "
 
 export PACKAGE_OVERRIDES="\
-	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.5.2-chos1-1/linux-chimeraos-6.5.2.chos1-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/linux-chimeraos/releases/download/v6.5.2-chos1-1/linux-chimeraos-headers-6.5.2.chos1-1-x86_64.pkg.tar.zst \
+	http://neroreflex.duckdns.org/linux-chimeraos-6.5.2.chos1-1-x86_64.gyro.pkg.tar.zst \
+	http://neroreflex.duckdns.org/linux-chimeraos-headers-6.5.2.chos1-1-x86_64.gyro.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-libva-mesa-driver-23.1.7.chos1-1-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-mesa-23.1.7.chos1-1-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.1.7-chos1-1/lib32-mesa-vdpau-23.1.7.chos1-1-x86_64.pkg.tar.zst \
@@ -163,13 +147,15 @@ export PACKAGE_OVERRIDES="\
 # Which is often the same as the package name but it can be different.
 # Check on the AUR webpage if you are unsure
 export AUR_PACKAGES="\
-	ayaled \
+	antimicrox-git \
 	ayn-platform-dkms-git \
+	asusctl \
 	bcm20702a1-firmware \
 	boxtron \
 	chimera \
 	chimeraos-device-quirks-git \
 	downgrade \
+	emudeck \
 	frzr \
 	gamescope-plus \
 	gamescope-session-git \
@@ -184,13 +170,9 @@ export AUR_PACKAGES="\
 	libretro-virtualjaguar-git \
 	kanit-font \
 	nintendo-udev \
-	opengamepadui-bin \
-	opengamepadui-session-git \
 	pikaur \
 	python-vdf \
-	retroarch-autoconfig-udev-git \
 	rtl8812au-dkms-git \
-	rtl8814au-dkms-git \
 	rtl88x2bu-dkms-git \
 	rtl8821au-dkms-git \
 	rtw89-dkms-git \
@@ -200,6 +182,7 @@ export AUR_PACKAGES="\
 	steam-removable-media-git \
 	wyvern \
 	xpad-noone-dkms \
+	ryujinx-git \
 	zenergy-dkms-git \
 "
 
@@ -216,7 +199,6 @@ export SERVICES="\
 	ryzenadj-controller \
 	sshd \
 	systemd-timesyncd \
-	swapfile \
 "
 
 export USER_SERVICES="\
@@ -288,6 +270,5 @@ postinstallhook() {
 	# force -steamdeck option in desktop mode to prevent constant steam updates
 	sed -i 's,Exec=/usr/bin/steam-runtime,Exec=/usr/bin/steam-runtime -steamdeck,' /usr/share/applications/steam.desktop
 
-	# set permissions for intel_gpu_top and mangohud
-	setcap cap_perfmon=+ep /usr/bin/intel_gpu_top
+	# set permissions for intel_gpu_top and mang
 }
