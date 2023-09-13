@@ -144,6 +144,7 @@ export PACKAGE_OVERRIDES="\
 # Which is often the same as the package name but it can be different.
 # Check on the AUR webpage if you are unsure
 export AUR_PACKAGES="\
+	antimicrox-git \
 	ayn-platform-dkms-git \
 	asusctl \
 	bcm20702a1-firmware \
@@ -153,7 +154,7 @@ export AUR_PACKAGES="\
 	downgrade \
 	emudeck \
 	frzr \
-	gamescope \
+	gamescope-plus \
 	gamescope-session-git \
 	handygccs-git \
 	hhfc-git \
