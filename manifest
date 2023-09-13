@@ -145,7 +145,6 @@ export PACKAGE_OVERRIDES="\
 # Check on the AUR webpage if you are unsure
 export AUR_PACKAGES="\
 	ayn-platform-dkms-git \
-	antimicrox-git \
 	asusctl \
 	bcm20702a1-firmware \
 	boxtron \
@@ -159,7 +158,7 @@ export AUR_PACKAGES="\
 	handygccs-git \
 	hhfc-git \
 	legendary \
-	lib32-gamescope \
+	lib32-gamescope-plus \
 	libretro-dosbox-pure-git \
 	libretro-opera-git \
 	libretro-prosystem-git \
