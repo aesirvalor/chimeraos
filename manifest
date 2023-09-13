@@ -169,7 +169,7 @@ export AUR_PACKAGES="\
 	libretro-prosystem-git \
 	libretro-stella2014-git \
 	libretro-virtualjaguar-git \
-	kanit-font \
+	ttf-kanit \
 	nintendo-udev \
 	pikaur \
 	python-vdf \
@@ -182,7 +182,7 @@ export AUR_PACKAGES="\
 	rz608-fix-git \
 	steam-removable-media-git \
 	wyvern \
-	xpad-noone-dkms \
+	xpadneo-dkms  \
 	ryujinx-git \
 	zenergy-dkms-git \
 	openrgb-git \
