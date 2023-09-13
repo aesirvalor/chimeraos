@@ -154,12 +154,12 @@ export AUR_PACKAGES="\
 	downgrade \
 	emudeck \
 	frzr \
-	gamescope-plus \
+	gamescope \
 	gamescope-session-git \
 	handygccs-git \
 	hhfc-git \
 	legendary \
-	lib32-gamescope-plus \
+	lib32-gamescope \
 	libretro-dosbox-pure-git \
 	libretro-opera-git \
 	libretro-prosystem-git \
