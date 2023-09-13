@@ -124,6 +124,7 @@ export PACKAGES="\
 	xdg-user-dirs-gtk \
 	xf86-video-amdgpu \
 	xorg-server \
+	easyeffects \
 "
 
 export PACKAGE_OVERRIDES="\
