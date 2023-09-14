@@ -207,6 +207,7 @@ export USER_SERVICES="\
 	chimera.service \
 	gamemoded.service \
 	ryzen-tctl \
+	openrgb.service \
 	steam-patch.service \
 "
 
