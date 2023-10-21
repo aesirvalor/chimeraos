@@ -207,6 +207,7 @@ export SERVICES="\
 	home-swapfile.swap \
 	lightdm \
 	sshd \
+	openrgb.service \
 	systemd-timesyncd \
 "
 
@@ -215,7 +216,6 @@ export USER_SERVICES="\
 	gamemoded.service \
 	pipewire \
 	steam-patch.service \
-	openrgb.service \
 	ally-motion-evdev.service \
 	evdevhook2.service \
 "
