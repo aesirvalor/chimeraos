@@ -1,0 +1,6 @@
+[submodule "pkgs/1_rog-ally-motion-evdev"]
+	path = pkgs/1_rog-ally-motion-evdev
+	url = https://github.com/NeroReflex/rog-ally-motion-evdev.git
+[submodule "pkgs/2_rog-ally-evdevhook2"]
+	path = pkgs/2_rog-ally-evdevhook2
+	url = https://github.com/NeroReflex/rog-ally-evdevhook2.git

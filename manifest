@@ -214,6 +214,8 @@ export USER_SERVICES="\
 	pipewire \
 	steam-patch.service \
 	openrgb.service \
+	ally-motion-evdev.service \
+	evdevhook2.service \
 "
 
 export FILES_TO_DELETE="\
