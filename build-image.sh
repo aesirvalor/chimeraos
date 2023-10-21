@@ -88,6 +88,9 @@ locale-gen
 # Disable parallel downloads
 sed -i '/ParallelDownloads/s/^/#/g' /etc/pacman.conf
 
+# Cannot check space in chroot
+sed -i '/CheckSpace/s/^/#/g' /etc/pacman.conf
+
 # update package databases
 pacman --noconfirm -Syy
 
@@ -104,7 +107,7 @@ pacman --noconfirm -U --overwrite '*' /own_pkgs/*
 rm -rf /var/cache/pacman/pkg
 
 # install packages
-pacman --noconfirm -S --overwrite '*' ${PACKAGES}
+pacman --noconfirm -S --overwrite '*' --disable-download-timeout ${PACKAGES}
 rm -rf /var/cache/pacman/pkg
 
 # install AUR packages
