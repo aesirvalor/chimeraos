@@ -186,6 +186,13 @@ export AUR_PACKAGES="\
 	nintendo-udev \
 	pikaur \
 	python-vdf \
+	r8168-dkms \
+	retroarch-autoconfig-udev-git \
+	rtl8812au-dkms-git \
+	rtl8814au-dkms-git \
+	rtl88x2bu-dkms-git \
+	rtl8821au-dkms-git \
+	rtw89-dkms-git \
 	retroarch-autoconfig-udev-git \
 	ryzenadj-git \
 	steam_notif_daemon \
