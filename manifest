@@ -155,6 +155,7 @@ export PACKAGE_OVERRIDES="\
 	https://archive.archlinux.org/packages/l/libretro-mame/libretro-mame-85763-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/rog-ally-motion-evdev/releases/download/v1.0.0-fix/rog-ally-motion-evdev-1.0.0-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/rog-ally-evdevhook2/releases/download/v1.0.1/rog-ally-evdevhook2-1.0.1.r1.g3635e5a-1-x86_64.pkg.tar.zst \
+	https://github.com/NeroReflex/steam-patch-pkgbuild/releases/download/v0.8.2/steam-patch-git-0.8.2-1-x86_64.pkg.tar.zst \
 "
 
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
@@ -225,6 +226,7 @@ export USER_SERVICES="\
 	steam-patch.service \
 	ally-motion-evdev.service \
 	evdevhook2.service \
+	steam-patch-handycon.service \
 "
 
 export FILES_TO_DELETE="\
