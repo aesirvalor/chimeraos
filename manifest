@@ -215,7 +215,6 @@ export SERVICES="\
 	lightdm \
 	sshd \
 	systemd-timesyncd \
-	nkey_sleep.service \
 "
 
 export USER_SERVICES="\
