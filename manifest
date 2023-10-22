@@ -156,6 +156,7 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/NeroReflex/rog-ally-motion-evdev/releases/download/v1.0.0-fix/rog-ally-motion-evdev-1.0.0-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/rog-ally-evdevhook2/releases/download/v1.0.1/rog-ally-evdevhook2-1.0.1.r1.g3635e5a-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/steam-patch-pkgbuild/releases/download/v0.8.2/steam-patch-git-0.8.2-1-x86_64.pkg.tar.zst \
+	https://github.com/NeroReflex/rog-ally-resume/releases/download/v0.0.2/rog-ally-resume-0.0.2-1-x86_64.pkg.tar.zst \
 "
 
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
@@ -217,6 +218,7 @@ export SERVICES="\
 	sshd \
 	openrgb.service \
 	systemd-timesyncd \
+	nkey_sleep.service \
 "
 
 export USER_SERVICES="\
