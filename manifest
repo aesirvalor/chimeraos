@@ -64,6 +64,7 @@ export PACKAGES="\
 	intel-ucode \
 	intel-undervolt \
 	iio-sensor-proxy \
+	less \
 	lib32-curl \
 	lib32-fontconfig \
 	lib32-freetype2 \
@@ -116,6 +117,7 @@ export PACKAGES="\
 	steam \
 	sudo \
 	tar \
+	tree \
 	ttf-liberation \
 	unace \
 	unrar \
@@ -174,6 +176,7 @@ export AUR_PACKAGES="\
 	frzr \
 	gamescope-plus \
 	gamescope-session-steam-git \
+	gamescope-session-steam-plus-git \
 	handygccs-git \
 	hhfc-git \
 	legendary \
