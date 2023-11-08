@@ -187,6 +187,7 @@ export AUR_PACKAGES="\
 	libretro-virtualjaguar-git \
 	nintendo-udev \
 	pikaur \
+	powerstation-bin \
 	python-vdf \
 	r8168-dkms \
 	retroarch-autoconfig-udev-git \
@@ -215,6 +216,7 @@ export SERVICES="\
 	haveged \
 	home-swapfile.swap \
 	lightdm \
+	powerstation \
 	sshd \
 	systemd-timesyncd \
 "
