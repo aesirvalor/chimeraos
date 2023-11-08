@@ -176,7 +176,6 @@ export AUR_PACKAGES="\
 	gamescope-plus \
 	gamescope-session-steam-git \
 	gamescope-session-steam-plus-git \
-	handygccs-git \
 	hhfc-git \
 	legendary \
 	lib32-gamescope-plus \
