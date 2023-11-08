@@ -142,8 +142,8 @@ export PACKAGES="\
 "
 
 export PACKAGE_OVERRIDES="\
-	http://neroreflex.duckdns.org/platform.linux-neroreflex-6.6.0.nrflx1-1-x86_64.pkg.tar.zst \
-	http://neroreflex.duckdns.org/platform.linux-neroreflex-headers-6.6.0.nrflx1-1-x86_64.pkg.tar.zst \
+	http://neroreflex.duckdns.org/linux-neroreflex-6.6.1.nrflx1-1-x86_64.pkg.tar.zst \
+	http://neroreflex.duckdns.org/linux-neroreflex-headers-6.6.1.nrflx1-1-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/lib32-libva-mesa-driver-23.2.1.chos1-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/lib32-mesa-23.2.1.chos1-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/lib32-mesa-vdpau-23.2.1.chos1-2-x86_64.pkg.tar.zst \
