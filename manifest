@@ -156,7 +156,7 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/vulkan-radeon-23.2.1.chos1-2-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/repos/2023/06/28/extra/os/x86_64/libretro-pcsx2-11900-2-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/packages/l/libretro-mame/libretro-mame-85763-1-x86_64.pkg.tar.zst \
-	https://github.com/NeroReflex/rog-ally-motion-evdev/releases/download/v1.0.0-fix/rog-ally-motion-evdev-1.0.0-1-x86_64.pkg.tar.zst \
+	https://github.com/NeroReflex/ROGueENEMY-pkgbuild/releases/download/v0.0.2/rogue-enemy-git-1.0.0-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/rog-ally-evdevhook2/releases/download/v1.0.1/rog-ally-evdevhook2-1.0.1.r1.g3635e5a-1-x86_64.pkg.tar.zst \
 "
 
@@ -212,7 +212,7 @@ export SERVICES="\
 	bluetooth \
 	bluetooth-workaround \
 	fstrim.timer \
-	handycon \
+	rogue-enemy \
 	haveged \
 	home-swapfile.swap \
 	lightdm \
@@ -226,7 +226,6 @@ export USER_SERVICES="\
 	gamemoded.service \
 	pipewire \
 	steam-patch.service \
-	ally-motion-evdev.service \
 	evdevhook2.service \
 "
 
