@@ -210,6 +210,7 @@ export SERVICES="\
 	avahi-daemon \
 	bluetooth \
 	bluetooth-workaround \
+	evdevhook2 \
 	fstrim.timer \
 	rogue-enemy \
 	haveged \
@@ -225,7 +226,6 @@ export USER_SERVICES="\
 	gamemoded.service \
 	pipewire \
 	steam-patch.service \
-	evdevhook2.service \
 "
 
 export FILES_TO_DELETE="\
