@@ -156,7 +156,7 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/vulkan-radeon-23.2.1.chos1-2-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/repos/2023/06/28/extra/os/x86_64/libretro-pcsx2-11900-2-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/packages/l/libretro-mame/libretro-mame-85763-1-x86_64.pkg.tar.zst \
-	https://github.com/NeroReflex/ROGueENEMY-pkgbuild/releases/download/v0.0.3/rogue-enemy-git-1.0.0-2-x86_64.pkg.tar.zst \
+	https://github.com/NeroReflex/ROGueENEMY-pkgbuild/releases/download/v1.1.0-3/rogue-enemy-git-1.1.0-3-x86_64.pkg.tar.zst \
 "
 
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
@@ -199,6 +199,7 @@ export AUR_PACKAGES="\
 	ryzenadj-git \
 	steam_notif_daemon \
 	steam-removable-media-git \
+	strangle \
 	wyvern \
 	ryujinx-git \
 	zenergy-dkms-git \
