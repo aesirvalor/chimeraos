@@ -142,9 +142,9 @@ export PACKAGES="\
 "
 
 export PACKAGE_OVERRIDES="\
-	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.2-nkey-v666/linux-neroreflex-6.6.2.nrflx2-1-x86_64.pkg.tar.zst \
-	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.2-nkey-v666/linux-neroreflex-headers-6.6.2.nrflx2-1-x86_64.pkg.tar.zst \
-	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.2-nkey-v666/linux-neroreflex-api-headers-6.6.2.nrflx2-1-x86_64.pkg.tar.zst \
+	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.2-v667/linux-neroreflex-6.6.2.nrflx2-1-x86_64.pkg.tar.zst \
+	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.2-v667/linux-neroreflex-api-headers-6.6.2.nrflx2-1-x86_64.pkg.tar.zst \
+	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.2-v667/linux-neroreflex-headers-6.6.2.nrflx2-1-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/lib32-libva-mesa-driver-23.2.1.chos1-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/lib32-mesa-23.2.1.chos1-2-x86_64.pkg.tar.zst \
 	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/lib32-mesa-vdpau-23.2.1.chos1-2-x86_64.pkg.tar.zst \
