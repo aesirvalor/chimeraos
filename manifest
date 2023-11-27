@@ -145,16 +145,16 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.2-v667/linux-neroreflex-6.6.2.nrflx2-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.2-v667/linux-neroreflex-api-headers-6.6.2.nrflx2-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.2-v667/linux-neroreflex-headers-6.6.2.nrflx2-1-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/lib32-libva-mesa-driver-23.2.1.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/lib32-mesa-23.2.1.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/lib32-mesa-vdpau-23.2.1.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/lib32-vulkan-intel-23.2.1.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/lib32-vulkan-radeon-23.2.1.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/libva-mesa-driver-23.2.1.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/mesa-23.2.1.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/mesa-vdpau-23.2.1.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/vulkan-intel-23.2.1.chos1-2-x86_64.pkg.tar.zst \
-	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.2.1-chos1-2/vulkan-radeon-23.2.1.chos1-2-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0.rc4-chos1-1/lib32-libva-mesa-driver-23.3.0.rc4.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0.rc4-chos1-1/lib32-mesa-23.3.0.rc4.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0.rc4-chos1-1/lib32-mesa-vdpau-23.3.0.rc4.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0.rc4-chos1-1/lib32-vulkan-intel-23.3.0.rc4.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0.rc4-chos1-1/lib32-vulkan-radeon-23.3.0.rc4.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0.rc4-chos1-1/libva-mesa-driver-23.3.0.rc4.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0.rc4-chos1-1/mesa-23.3.0.rc4.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0.rc4-chos1-1/mesa-vdpau-23.3.0.rc4.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0.rc4-chos1-1/vulkan-intel-23.3.0.rc4.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0.rc4-chos1-1/vulkan-radeon-23.3.0.rc4.chos1-1-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/repos/2023/06/28/extra/os/x86_64/libretro-pcsx2-11900-2-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/packages/l/libretro-mame/libretro-mame-85763-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/ROGueENEMY-pkgbuild/releases/download/v1.2.0/rogue-enemy-git-1.2.0-1-x86_64.pkg.tar.zst \
@@ -189,6 +189,7 @@ export AUR_PACKAGES="\
 	pikaur \
 	powerstation-bin \
 	python-vdf \
+	r8152-dkms \
 	r8168-dkms \
 	retroarch-autoconfig-udev-git \
 	rtl8812au-dkms-git \
@@ -271,7 +272,8 @@ postinstallhook() {
 	# remove dolphin standalone emulator files (only need /usr/share/dolphin-emu/sys)
 	rm /usr/bin/dolphin-emu
 	rm /usr/bin/dolphin-emu-nogui
-	rm /usr/bin/dolphin-tool
+	# dolphin-tool is no longer created in new builds?
+	#rm /usr/bin/dolphin-tool
 	rm /usr/share/applications/dolphin-emu.desktop
 
 	# clean up desktop shortcuts
@@ -292,5 +294,9 @@ postinstallhook() {
 	# force -steamdeck option in desktop mode to prevent constant steam updates
 	sed -i 's,Exec=/usr/bin/steam-runtime,Exec=/usr/bin/steam-runtime -steamdeck,' /usr/share/applications/steam.desktop
 
-	# set permissions for intel_gpu_top and mang
+	# set permissions for intel_gpu_top and mangohud
+	setcap cap_perfmon=+ep /usr/bin/intel_gpu_top
+
+	# remove r8169 blacklist in /usr, leave it up to the user
+	rm /usr/lib/modprobe.d/r8168-dkms.conf
 }
