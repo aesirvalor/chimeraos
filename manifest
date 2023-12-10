@@ -154,8 +154,6 @@ export PACKAGE_OVERRIDES="\
 # Which is often the same as the package name but it can be different.
 # Check on the AUR webpage if you are unsure
 export AUR_PACKAGES="\
-	mesa-amdonly-gaming-git \
-	lib32-mesa-amdonly-gaming-git \
 	antimicrox-git \
 	asusctl \
 	bcm20702a1-firmware \

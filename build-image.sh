@@ -114,6 +114,19 @@ rm -rf /var/cache/pacman/pkg
 pacman --noconfirm -U --overwrite '*' /extra_pkgs/*
 rm -rf /var/cache/pacman/pkg
 
+mkdir /aur
+cd /aur
+git clone https://aur.archlinux.org/lib32-mesa-amdonly-gaming-git.git
+git clone https://aur.archlinux.org/mesa-amdonly-gaming-git.git
+cd mesa-amdonly-gaming-git
+yes | makepkg -sfi
+cd ..
+cd lib32-mesa-amdonly-gaming-git
+yes | makepkg -sfi
+cd ..
+rm -rf /aur
+mkdir /config
+
 # enable services
 systemctl enable ${SERVICES}
 
