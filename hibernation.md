@@ -1,5 +1,7 @@
 # How to get hibernate working on ROG Ally with ChimeraOS
- 
+
+Kernel should have this: https://www.phoronix.com/news/LZ4-Linux-Hibernation-v2
+
 # Step 1. Resize /home/swapfile
 ```sh
 	sudo swapoff /home/swapfile
