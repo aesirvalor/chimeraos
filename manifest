@@ -145,6 +145,18 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.5-amdgpu_fix/linux-neroreflex-6.6.5.nrflx1-1-x86_64.pkg.tar.zst  \
 	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.5-amdgpu_fix/linux-neroreflex-api-headers-6.6.5.nrflx1-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.5-amdgpu_fix/linux-neroreflex-headers-6.6.5.nrflx1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0-chos1-1/lib32-libva-mesa-driver-23.3.0.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0-chos1-1/lib32-mesa-23.3.0.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0-chos1-1/lib32-mesa-vdpau-23.3.0.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0-chos1-1/lib32-vulkan-intel-23.3.0.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0-chos1-1/lib32-vulkan-radeon-23.3.0.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0-chos1-1/libva-mesa-driver-23.3.0.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0-chos1-1/mesa-23.3.0.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0-chos1-1/mesa-vdpau-23.3.0.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0-chos1-1/vulkan-intel-23.3.0.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/ChimeraOS/mesa-chimeraos/releases/download/23.3.0-chos1-1/vulkan-radeon-23.3.0.chos1-1-x86_64.pkg.tar.zst \
+	https://github.com/NeroReflex/asusctl/releases/download/dbus-refactor-fix/asusctl-4.7.2+r33+gc420dd8-1-x86_64.pkg.tar.zst \
+	https://github.com/NeroReflex/asusctl/releases/download/dbus-refactor-fix/rog-control-center-4.7.2+r33+gc420dd8-1-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/repos/2023/06/28/extra/os/x86_64/libretro-pcsx2-11900-2-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/packages/l/libretro-mame/libretro-mame-85763-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/ROGueENEMY-pkgbuild/releases/download/v1.5.0-1/rogue-enemy-git-1.5.0-1-x86_64.pkg.tar.zst \
@@ -154,8 +166,6 @@ export PACKAGE_OVERRIDES="\
 # Which is often the same as the package name but it can be different.
 # Check on the AUR webpage if you are unsure
 export AUR_PACKAGES="\
-	antimicrox-git \
-	asusctl \
 	bcm20702a1-firmware \
 	boxtron \
 	chimera \
