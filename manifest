@@ -141,9 +141,9 @@ export PACKAGES="\
 "
 
 export PACKAGE_OVERRIDES="\
-	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.5-amdgpu_fix/linux-neroreflex-6.6.5.nrflx1-1-x86_64.pkg.tar.zst  \
-	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.5-amdgpu_fix/linux-neroreflex-api-headers-6.6.5.nrflx1-1-x86_64.pkg.tar.zst \
-	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.5-amdgpu_fix/linux-neroreflex-headers-6.6.5.nrflx1-1-x86_64.pkg.tar.zst \
+	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.4-fluke_v14.1-version_fix/linux-neroreflex-6.6.4.nrflx1-1-x86_64.pkg.tar.zst  \
+	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.4-fluke_v14.1-version_fix/linux-neroreflex-api-headers-6.6.4.nrflx1-1-x86_64.pkg.tar.zst \
+	https://github.com/NeroReflex/linux-chimeraos/releases/download/v6.6.4-fluke_v14.1-version_fix/linux-neroreflex-headers-6.6.4.nrflx1-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/mesa-chimeraos/releases/download/v24.deve.20231211-fix/lib32-libva-mesa-driver-24.0.0_devel_1.181988.9ca9b674462.d954e6c2b60b8d8c955b77483af4bdfb_1.181990.888f09eca88.d954e6c2b60b8d8c955b77483af4bdfb-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/mesa-chimeraos/releases/download/v24.deve.20231211-fix/lib32-mesa-24.0.0_devel_1.181988.9ca9b674462.d954e6c2b60b8d8c955b77483af4bdfb_1.181990.888f09eca88.d954e6c2b60b8d8c955b77483af4bdfb-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/mesa-chimeraos/releases/download/v24.deve.20231211-fix/lib32-mesa-vdpau-24.0.0_devel_1.181988.9ca9b674462.d954e6c2b60b8d8c955b77483af4bdfb_1.181990.888f09eca88.d954e6c2b60b8d8c955b77483af4bdfb-1-x86_64.pkg.tar.zst \
