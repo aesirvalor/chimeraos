@@ -142,9 +142,9 @@ export PACKAGES="\
 "
 
 export PACKAGE_OVERRIDES="\
-	https://github.com/NeroReflex/linux-chimeraos/releases/download/linux-chimeraos-6.6.7.nrflx1-4/linux-neroreflex-6.6.7.nrflx1-2-x86_64.pkg.tar.zst  \
-	https://github.com/NeroReflex/linux-chimeraos/releases/download/linux-chimeraos-6.6.7.nrflx1-4/linux-neroreflex-api-headers-6.6.7.nrflx1-2-x86_64.pkg.tar.zst \
-	https://github.com/NeroReflex/linux-chimeraos/releases/download/linux-chimeraos-6.6.7.nrflx1-4/linux-neroreflex-headers-6.6.7.nrflx1-2-x86_64.pkg.tar.zst \
+	http://neroreflex.duckdns.org/linux-neroreflex-6.6.7.nrflx1-2-x86_64.pkg.tar.zst  \
+	http://neroreflex.duckdns.org/linux-neroreflex-api-headers-6.6.7.nrflx1-2-x86_64.pkg.tar.zst \
+	http://neroreflex.duckdns.org/linux-neroreflex-headers-6.6.7.nrflx1-2-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/mesa-chimeraos/releases/download/v24.devel-231213/lib32-libva-mesa-driver-24.0.0_devel_1.181988.9ca9b674462.d954e6c2b60b8d8c955b77483af4bdfb_1.182177.d024da39006.d954e6c2b60b8d8c955b77483af4bdfb-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/mesa-chimeraos/releases/download/v24.devel-231213/lib32-mesa-24.0.0_devel_1.181988.9ca9b674462.d954e6c2b60b8d8c955b77483af4bdfb_1.182177.d024da39006.d954e6c2b60b8d8c955b77483af4bdfb-1-x86_64.pkg.tar.zst \
 	https://github.com/NeroReflex/mesa-chimeraos/releases/download/v24.devel-231213/lib32-mesa-vdpau-24.0.0_devel_1.181988.9ca9b674462.d954e6c2b60b8d8c955b77483af4bdfb_1.182177.d024da39006.d954e6c2b60b8d8c955b77483af4bdfb-1-x86_64.pkg.tar.zst \
@@ -167,7 +167,7 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/NeroReflex/asusctl/releases/download/dbus-refactor-fix/rog-control-center-4.7.2+r33+gc420dd8-1-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/repos/2023/06/28/extra/os/x86_64/libretro-pcsx2-11900-2-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/packages/l/libretro-mame/libretro-mame-85763-1-x86_64.pkg.tar.zst \
-	https://github.com/NeroReflex/ROGueENEMY-pkgbuild/releases/download/v1.9.9.devel-3/rogue-enemy-git-1.5.1-2-x86_64.pkg.tar.zst \
+	https://github.com/NeroReflex/ROGueENEMY-pkgbuild/releases/download/v1.9.9.devel-4/rogue-enemy-git-1.5.1-2-x86_64.pkg.tar.zst \
 "
 
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
