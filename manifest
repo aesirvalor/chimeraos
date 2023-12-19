@@ -167,7 +167,7 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/NeroReflex/asusctl/releases/download/dbus-refactor-fix/rog-control-center-4.7.2+r33+gc420dd8-1-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/repos/2023/06/28/extra/os/x86_64/libretro-pcsx2-11900-2-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/packages/l/libretro-mame/libretro-mame-85763-1-x86_64.pkg.tar.zst \
-	https://github.com/NeroReflex/ROGueENEMY-pkgbuild/releases/download/v1.9.9.devel/rogue-enemy-git-1.5.1-2-x86_64.pkg.tar.zst \
+	https://github.com/NeroReflex/ROGueENEMY-pkgbuild/releases/download/v1.9.9.devel-3/rogue-enemy-git-1.5.1-2-x86_64.pkg.tar.zst \
 "
 
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
@@ -224,6 +224,7 @@ export SERVICES="\
 	evdevhook2 \
 	fstrim.timer \
 	rogue-enemy \
+	stray-ally \
 	haveged \
 	home-swapfile.swap \
 	lightdm \
