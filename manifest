@@ -308,3 +308,4 @@ postinstallhook() {
 	# remove r8169 blacklist in /usr, leave it up to the user
 	rm /usr/lib/modprobe.d/r8168-dkms.conf
 }
+
