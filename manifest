@@ -206,6 +206,7 @@ export AUR_PACKAGES="\
 	rtw89-dkms-git \
 	retroarch-autoconfig-udev-git \
 	ryzenadj-git \
+	sdl2-git \
 	steam_notif_daemon \
 	steam-removable-media-git \
 	libstrangle-git \
@@ -220,7 +221,6 @@ export SERVICES="\
 	avahi-daemon \
 	bluetooth \
 	bluetooth-workaround \
-	evdevhook2 \
 	fstrim.timer \
 	rogue-enemy \
 	stray-ally \
