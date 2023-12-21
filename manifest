@@ -13,6 +13,8 @@ export BUG_REPORT_URL="https://github.com/ChimeraOS/chimeraos/issues"
 export KERNEL_PACKAGE="linux-neroreflex"
 export KERNEL_PACKAGE_ORIGIN="local"
 
+#removed packages:
+# broadcom-wl-dkms \
 export PACKAGES="\
 	cmake \
 	clang \
@@ -23,7 +25,6 @@ export PACKAGES="\
 	alsa-utils \
 	amd-ucode \
 	bash-completion \
-	broadcom-wl-dkms \
 	bzip2 \
 	cifs-utils \
 	diffutils \
@@ -173,6 +174,15 @@ export PACKAGE_OVERRIDES="\
 # Each entry is the clone url (https://aur.archlinux.org/{AUR_PACKAGE}.git)
 # Which is often the same as the package name but it can be different.
 # Check on the AUR webpage if you are unsure
+#removed packages:
+#   r8152-dkms \
+#	r8168-dkms \
+#	rtl8812au-dkms-git \
+#	rtl8814au-dkms-git \
+#	rtl88x2bu-dkms-git \
+#	rtl8821au-dkms-git \
+#	rtw89-dkms-git \
+#
 export AUR_PACKAGES="\
 	bcm20702a1-firmware \
 	boxtron \
@@ -197,14 +207,6 @@ export AUR_PACKAGES="\
 	pikaur \
 	powerstation-bin \
 	python-vdf \
-	r8152-dkms \
-	r8168-dkms \
-	retroarch-autoconfig-udev-git \
-	rtl8812au-dkms-git \
-	rtl8814au-dkms-git \
-	rtl88x2bu-dkms-git \
-	rtl8821au-dkms-git \
-	rtw89-dkms-git \
 	retroarch-autoconfig-udev-git \
 	ryzenadj-git \
 	steam_notif_daemon \
