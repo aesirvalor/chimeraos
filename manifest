@@ -308,6 +308,6 @@ postinstallhook() {
 	setcap cap_perfmon=+ep /usr/bin/intel_gpu_top
 
 	# remove r8169 blacklist in /usr, leave it up to the user
-	rm /usr/lib/modprobe.d/r8168-dkms.conf
+	rm -rf /usr/lib/modprobe.d/r8168-dkms.conf
 }
 
