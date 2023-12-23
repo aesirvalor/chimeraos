@@ -7,7 +7,7 @@ pkgdesc="Files for Steam Deck UI"
 arch=('any')
 url='https://github.com/rog-ally-gaming/c'
 license=('GPL')
-depends=(steam mangohud jq dmidecode glew glfw-x11 glxinfo curl tar)
+depends=(steam mangohud jq dmidecode glew glfw-x11 glxinfo curl tar qt5-virtualkeyboard sddm plasma)
 install=install
 
 source=(gamescope-wayland-teardown-workaround
@@ -73,7 +73,7 @@ package() {
 	echo "DisplayServer=wayland" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
 	echo "[Autologin]" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
 	echo "Relogin=true" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
-	echo "Session=gamepadui-with-qam-session.desktop" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
+	echo "Session=steamos.desktop" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
 	echo "User=gamer" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
 	echo "[X11]" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
 	echo "# Janky workaround for wayland sessions not stopping in sddm, kills" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
