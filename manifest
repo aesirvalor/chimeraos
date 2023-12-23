@@ -75,7 +75,7 @@ export PACKAGES="\
 	libva-vdpau-driver \
 	libxcrypt-compat \
 	libxss \
-	ssdm \
+	sddm \
 	linux-firmware \
 	liquidctl \
 	logrotate \
@@ -222,7 +222,7 @@ export SERVICES="\
 	stray-ally \
 	haveged \
 	home-swapfile.swap \
-	ssdm \
+	sddm \
 	powerstation \
 	sshd \
 	systemd-timesyncd \
