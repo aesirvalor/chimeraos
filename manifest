@@ -46,16 +46,6 @@ export PACKAGES="\
 	fwupd \
 	gamemode \
 	git \
-	gnome-browser-connector \
-	gnome-console \
-	gnome-control-center \
-	gnome-disk-utility \
-	gnome-keyring \
-	gnome-session \
-	gnome-shell \
-	gnome-software \
-	gnome-system-monitor \
-	gnome-text-editor \
 	gst-plugin-pipewire \
 	gzip \
 	haveged \
@@ -85,7 +75,7 @@ export PACKAGES="\
 	libva-vdpau-driver \
 	libxcrypt-compat \
 	libxss \
-	lightdm \
+	ssdm \
 	linux-firmware \
 	liquidctl \
 	logrotate \
@@ -216,6 +206,9 @@ export AUR_PACKAGES="\
 	ryujinx-git \
 	zenergy-dkms-git \
 	openrgb-git \
+	plasma-mobile-nm \
+	plasma-mobile-sounds \
+	plasma-mobile \
 "
 
 export SERVICES="\
@@ -228,7 +221,7 @@ export SERVICES="\
 	stray-ally \
 	haveged \
 	home-swapfile.swap \
-	lightdm \
+	ssdm \
 	powerstation \
 	sshd \
 	systemd-timesyncd \
@@ -259,7 +252,6 @@ postinstallhook() {
 	echo "${USERNAME} ALL=(ALL) NOPASSWD: /usr/bin/dmidecode -t 11
 	" > /etc/sudoers.d/steam
 	echo "${USERNAME} ALL=(ALL) NOPASSWD: /usr/bin/chimera-session-use-gamescope
-	${USERNAME} ALL=(ALL) NOPASSWD: /usr/bin/chimera-session-use-lightdm
 	${USERNAME} ALL=(ALL) NOPASSWD: /usr/share/chimera/bin/power-tool
 	" > /etc/sudoers.d/chimera
 
@@ -288,18 +280,6 @@ postinstallhook() {
 
 	# clean up desktop shortcuts
 	sed -i -e 's/Name=Steam (Runtime)/Name=Steam/' /usr/share/applications/steam.desktop
-	find /usr/share/applications/* | \
-	grep -v org.chimeraos.Gamescope.desktop | \
-	grep -v org.chimeraos.app.desktop | \
-	grep -v org.gnome.Console.desktop | \
-	grep -v org.gnome.DiskUtility.desktop | \
-	grep -v org.gnome.FileRoller.desktop | \
-	grep -v org.gnome.Nautilus.desktop | \
-	grep -v org.gnome.Settings.desktop | \
-	grep -v org.gnome.Software.desktop | \
-	grep -v org.gnome.TextEditor.desktop | \
-	grep -v steam.desktop | \
-	xargs -I {} sh -c "echo NoDisplay=true >> {}"
 
 	# force -steamdeck option in desktop mode to prevent constant steam updates
 	sed -i 's,Exec=/usr/bin/steam-runtime,Exec=/usr/bin/steam-runtime -steamdeck,' /usr/share/applications/steam.desktop
