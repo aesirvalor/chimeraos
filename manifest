@@ -130,7 +130,6 @@ export PACKAGES="\
 	xorg-server \
 	xz \
 	zip \
-	kiconthemes \
 "
 
 export PACKAGE_OVERRIDES="\
