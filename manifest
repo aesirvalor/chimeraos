@@ -206,7 +206,6 @@ export AUR_PACKAGES="\
 	ryujinx-git \
 	zenergy-dkms-git \
 	openrgb-git \
-	plasma-mobile-nm \
 	plasma-mobile-sounds \
 	plasma-mobile \
 "
