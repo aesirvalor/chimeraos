@@ -94,9 +94,6 @@ sed -i '/CheckSpace/s/^/#/g' /etc/pacman.conf
 # update package databases
 pacman --noconfirm -Syy
 
-# prevent build to fail for wanting jack2
-pacman -S --noconfirm --overwrite "*" wireplumber pipewire pipewire-alsa pipewire-jack pipewire-pulse
-
 # install kernel package
 if [ "$KERNEL_PACKAGE_ORIGIN" == "local" ] ; then
 	pacman --noconfirm -U --overwrite '*' \
