@@ -246,6 +246,9 @@ export FILES_TO_DELETE="\
 "
 
 postinstallhook() {
+	# Remove problematic software from the build
+	sudo pacman --noconfirm -Rnsdd powerdevil kscreenlocker
+
 	# Add sudo permissions
 	sed -i '/%wheel ALL=(ALL:ALL) ALL/s/^# //g' /etc/sudoers
 	echo "${USERNAME} ALL=(ALL) NOPASSWD: /usr/bin/dmidecode -t 11
