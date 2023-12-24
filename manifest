@@ -131,7 +131,7 @@ export PACKAGES="\
 	xz \
 	zip \
 	plasma \
-	ssdm \
+	sddm \
 "
 
 export PACKAGE_OVERRIDES="\
