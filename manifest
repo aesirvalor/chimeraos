@@ -205,8 +205,6 @@ export AUR_PACKAGES="\
 	wyvern \
 	ryujinx-git \
 	zenergy-dkms-git \
-	plasma-mobile-sounds \
-	plasma-mobile \
 "
 
 export SERVICES="\

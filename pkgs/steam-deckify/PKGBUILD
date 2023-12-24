@@ -43,7 +43,7 @@ sha256sums=('6d105e52da5f74eebb77d27f73285bfccf4f4ed828c3826b279bc9526b725aea' #
             '872054b72bfdcf844b9af9063d51579578eebf0319949b1f1358caef7db8510b' # org.neroreflex.host.policy
             'abb078a7cc938eb40bdbebd8a8d92bc80a7f12d61817a802a3331a1912d52ebe' # org.neroreflex.priv.write.policy
             '4f3645056fcb83f2461c7a3b3ef5907cc2fdcd1985188d0690428a30b3c0cd1a' # org.neroreflex.session.select.policy
-            'a034ee720532fe5aa7a166d39eb8cac3323e87d6a64e856a1ce81124a546a6af' # os-session-select
+            'ebe60c4472ce95b08b54c7ca99027cd33dd8f75adb068a36f37e615a5bda1dab' # os-session-select
             '1fbfc1d9c24cfc544eed8438128b6bff958859fa8e2af448c6486a4b8f9b7764'
             '5d64685533196daefdf5f55cfc4a87516d5930bbc0b2c5c2619cf90012805f64'
             '2978da7d8cf0bfa4ffaef30a288f6f94222822880cc9f48105b5fb71207fe183'
