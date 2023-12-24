@@ -289,7 +289,8 @@ postinstallhook() {
 	# remove r8169 blacklist in /usr, leave it up to the user
 	rm -rf /usr/lib/modprobe.d/r8168-dkms.conf
 
-	ufw allow 8844/tcp
-	ufw allow ssh
+	# TODO: find a proper solution
+	#ufw allow 8844/tcp
+	#ufw allow ssh
 }
 
