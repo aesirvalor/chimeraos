@@ -130,7 +130,6 @@ export PACKAGES="\
 	zip \
 	plasma \
 	sddm \
-	hyprland \
 "
 
 export PACKAGE_OVERRIDES="\
@@ -221,6 +220,7 @@ export SERVICES="\
 	powerstation \
 	sshd \
 	systemd-timesyncd \
+	sddm \
 "
 
 export USER_SERVICES="\
@@ -228,7 +228,6 @@ export USER_SERVICES="\
 	gamemoded.service \
 	pipewire \
 	steam-patch.service \
-	autogui.service \
 "
 
 export FILES_TO_DELETE="\
