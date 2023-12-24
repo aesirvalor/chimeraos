@@ -130,6 +130,8 @@ export PACKAGES="\
 	xorg-server \
 	xz \
 	zip \
+	plasma \
+	ssdm \
 "
 
 export PACKAGE_OVERRIDES="\

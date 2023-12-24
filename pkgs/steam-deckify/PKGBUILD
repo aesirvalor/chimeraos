@@ -7,7 +7,7 @@ pkgdesc="Files for Steam Deck UI"
 arch=('any')
 url='https://github.com/rog-ally-gaming/c'
 license=('GPL')
-depends=(steam mangohud jq dmidecode glew glfw-x11 glxinfo curl tar qt5-virtualkeyboard sddm plasma)
+depends=(steam mangohud jq dmidecode glew glfw-x11 glxinfo curl tar qt5-virtualkeyboard)
 install=install
 
 source=(gamescope-wayland-teardown-workaround
