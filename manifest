@@ -112,7 +112,6 @@ export PACKAGES="\
 	unace \
 	unrar \
 	unzip \
-	ufw \
 	usb_modeswitch \
 	usbutils \
 	vim \
@@ -222,7 +221,6 @@ export SERVICES="\
 	powerstation \
 	sshd \
 	systemd-timesyncd \
-	ufw \
 "
 
 export USER_SERVICES="\
@@ -230,6 +228,7 @@ export USER_SERVICES="\
 	gamemoded.service \
 	pipewire \
 	steam-patch.service \
+	autogui.service \
 "
 
 export FILES_TO_DELETE="\
@@ -290,53 +289,5 @@ postinstallhook() {
 
 	# remove r8169 blacklist in /usr, leave it up to the user
 	rm -rf /usr/lib/modprobe.d/r8168-dkms.conf
-
-	# TODO: find a proper solution
-	#ufw allow 8844/tcp
-	#ufw allow ssh
-
-	echo 'if [[ "$(tty)" == "/dev/tty1" ]]' >> /home/$USERNAME/.profile
-	echo 'then' >> /home/$USERNAME/.profile
-	echo 'sh hyprland.sh && echo "goodbye, now logging out" && exit 0 \' >> /home/$USERNAME/.profile
-	echo '|| echo "$? hyperland.sh failed" && tty |grep tty1 \' >> /home/$USERNAME/.profile
-	echo '	&& echo "refusing autologin without hyprland on tty1" && exit 0 \' >> /home/$USERNAME/.profile
-	echo '	|| echo "not on tt1, letting in"' >> /home/$USERNAME/.profile
-	echo 'fi' >> /home/$USERNAME/.profile
-
-	chmod +x /home/$USERNAME/.profile
-
-	echo '#!/bin/sh' >> /home/$USERNAME/hyprland.sh
-	echo '[ ! -f /run/udev/data/+drm:card0-eDP-1 ] \' >> /home/$USERNAME/hyprland.sh
-	echo '&& sudo systemctl restart systemd-udev-trigger > /dev/null' >> /home/$USERNAME/hyprland.sh
-	echo '' >> /home/$USERNAME/hyprland.sh
-	echo 'while [ ! -f /run/udev/data/+drm:card0-eDP-1 ] ; do echo "waiting for drm" && sleep 0.2 ; done' >> /home/$USERNAME/hyprland.sh
-	echo '' >> /home/$USERNAME/hyprland.sh
-	echo '[ -z $USER ] || export USER=$( id -n -u )' >> /home/$USERNAME/hyprland.sh
-	echo '[ -n $UID ] || export UID=$( id -u )' >> /home/$USERNAME/hyprland.sh
-	echo '[ -z $TERM ] && export TERM=linux' >> /home/$USERNAME/hyprland.sh
-	echo '[ -z $LOGNAME ] && export LOGNAME=$USER' >> /home/$USERNAME/hyprland.sh
-	echo '[ -z $HOME ] && export HOME=/home/$USER' >> /home/$USERNAME/hyprland.sh
-	echo '[ -z $LANG ] && export LANG=C.UTF-8' >> /home/$USERNAME/hyprland.sh
-	echo '[ -z $PATH ] && export PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl' >> /home/$USERNAME/hyprland.sh
-	echo '[ -z $XDG_SEAT ] && export XDG_SEAT=seat0' >> /home/$USERNAME/hyprland.sh
-	echo '[ -z $XDG_SESSION_TYPE ]  && export XDG_SESSION_TYPE=tty' >> /home/$USERNAME/hyprland.sh
-	echo '[ -z $XDG_SESSION_CLASS ] && export XDG_SESSION_CLASS=user' >> /home/$USERNAME/hyprland.sh
-	echo '[ -z $XDG_VTNR ] && export XDG_VTNR=1' >> /home/$USERNAME/hyprland.sh
-	echo '[ -z $XDG_RUNTIME_DIR ] && export XDG_RUNTIME_DIR=/run/user/$UID' >> /home/$USERNAME/hyprland.sh
-	echo '[ -z $DBUS_SESSION_BUS_ADDRESS ] && export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$UID/bus' >> /home/$USERNAME/hyprland.sh
-	echo '' >> /home/$USERNAME/hyprland.sh
-	echo 'export HYPRLAND_LOG_WLR=1' >> /home/$USERNAME/hyprland.sh
-	echo 'export XCURSOR_SIZE=24' >> /home/$USERNAME/hyprland.sh
-	echo '' >> /home/$USERNAME/hyprland.sh
-	echo '# change the theme here' >> /home/$USERNAME/hyprland.sh
-	echo 'export XCURSOR_THEME=Bibata-Modern-Classic' >> /home/$USERNAME/hyprland.sh
-	echo 'export GTK_THEME=Adwaita-amoled-dark-Fix' >> /home/$USERNAME/hyprland.sh
-	echo '' >> /home/$USERNAME/hyprland.sh
-	echo '[ ! -f /run/udev/data/+drm:card0-eDP-1 ] \' >> /home/$USERNAME/hyprland.sh
-	echo '&& echo "Hyprland needs drm, bailing out" && exit -1' >> /home/$USERNAME/hyprland.sh
-	echo '' >> /home/$USERNAME/hyprland.sh
-	echo 'exec Hyprland > .hyprland.log.txt 2> .hyprland.err.txt' >> /home/$USERNAME/hyprland.sh
-
-	chmod +x /home/$USERNAME/hyprland.sh
 } 
 

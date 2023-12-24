@@ -1,0 +1,11 @@
+[Unit]
+Description=GUI autostart
+
+[Service]
+Type=simple
+ExecStart=gamescope-session-plus steam
+Restart=on-failure
+Slice=session.slice
+
+[Install]
+WantedBy=default.target

@@ -1,5 +1,5 @@
 [Unit]
-Description=Start gamescope
+Description=Start hyprland
 After=sysinit.target
 After=initrd-switch-root.service
 
@@ -10,13 +10,14 @@ After=seatd.service
 Wants=systemd-logind.service
 After=systemd-logind.service
 
-ConditionPathExists=/home/gamer OnFailure=emergency.target
+ConditionPathExists=/home/gamer
+OnFailure=emergency.target
 
 [Service]
 Type=simple
 ExecStartPre=+/usr/sbin/rm -f /run/nologin
 ExecStart=-/usr/sbin/agetty -o '-p -f -- \u' --noclear --autologin gamer %I $TERM
-StandardOutput=null
+StandardOutput=journal
 StandardError=journal
 
 [Install]
