@@ -103,6 +103,7 @@ package() {
 	install -Dm755 ${srcdir}/xterm.desktop -t ${pkgdir}/usr/local/share/applications
 	install -Dm755 ${srcdir}/uxterm.desktop -t ${pkgdir}/usr/local/share/applications
 	install -Dm755 ${srcdir}/org.kde.kuserfeedback-console.desktop -t ${pkgdir}/usr/local/share/applications
+	install -Dm755 ${srcdir}/steamos-gamemode.desktop -t ${pkgdir}/usr/local/share/applications
 	install -Dm755 ${srcdir}/qvidcap.desktop -t ${pkgdir}/usr/local/share/applications
 	install -Dm755 ${srcdir}/qv4l2.desktop -t ${pkgdir}/usr/local/share/applications
 	install -Dm755 ${srcdir}/qdbusviewer.desktop -t ${pkgdir}/usr/local/share/applications
