@@ -130,6 +130,7 @@ export PACKAGES="\
 	zip \
 	plasma \
 	sddm \
+	gparted \
 "
 
 export PACKAGE_OVERRIDES="\
