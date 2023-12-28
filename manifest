@@ -133,9 +133,9 @@ export PACKAGES="\
 "
 
 export PACKAGE_OVERRIDES="\
-	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/linux-chimeraos-6.6.8.nrflx1-1/linux-neroreflex-6.6.8.nrflx1-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/linux-chimeraos-6.6.8.nrflx1-1/linux-neroreflex-api-headers-6.6.8.nrflx1-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/linux-chimeraos-6.6.8.nrflx1-1/linux-neroreflex-headers-6.6.8.nrflx1-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/linux-chimeraos-6.6.8.nrflx1-2/linux-neroreflex-6.6.8.nrflx1-2-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/linux-chimeraos-6.6.8.nrflx1-2/linux-neroreflex-api-headers-6.6.8.nrflx1-2-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/linux-chimeraos-6.6.8.nrflx1-2/linux-neroreflex-headers-6.6.8.nrflx1-2-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.devel-231213/lib32-libva-mesa-driver-24.0.0_devel_1.181988.9ca9b674462.d954e6c2b60b8d8c955b77483af4bdfb_1.182177.d024da39006.d954e6c2b60b8d8c955b77483af4bdfb-1-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.devel-231213/lib32-mesa-24.0.0_devel_1.181988.9ca9b674462.d954e6c2b60b8d8c955b77483af4bdfb_1.182177.d024da39006.d954e6c2b60b8d8c955b77483af4bdfb-1-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.devel-231213/lib32-mesa-vdpau-24.0.0_devel_1.181988.9ca9b674462.d954e6c2b60b8d8c955b77483af4bdfb_1.182177.d024da39006.d954e6c2b60b8d8c955b77483af4bdfb-1-x86_64.pkg.tar.zst \
