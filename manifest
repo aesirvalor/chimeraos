@@ -216,7 +216,6 @@ export SERVICES="\
 	bluetooth-workaround \
 	fstrim.timer \
 	rogue-enemy \
-	stray-ally \
 	haveged \
 	home-swapfile.swap \
 	powerstation \
