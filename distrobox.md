@@ -20,7 +20,7 @@ distrobox assemble create
 ```sh
 distrobox enter arch-kde
 ```
-4) create nested-desktop.kde-arch.sh file with contents (mark as executable and add as non steam game):
+4) create nested-desktop.kde-arch.sh file with contents:
 ```sh
 #!/bin/sh
 mkdir $XDG_RUNTIME_DIR/nested_plasma -p
@@ -34,13 +34,13 @@ dbus-run-session startplasma-wayland
 rm $XDG_RUNTIME_DIR/nested_plasma/kwin_wayland_wrapper
 ```
 
-create nested-session.sh containing:
+create start-kde.sh containing (mark as executable and add as non steam game):
 
 ```sh
 #!/bin/sh
 unset LD_PRELOAD
 chmod a+x ~/nested-desktop.kde-arch.sh
-distrobox-enter arch-kde sh ~/nested-desktop.kde-arch.sh
+distrobox-enter arch-kde -- sh ~/nested-desktop.kde-arch.sh
 ```
 remember to chmod +x those two files.
 
