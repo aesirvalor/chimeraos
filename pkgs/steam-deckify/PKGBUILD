@@ -68,23 +68,18 @@ sha256sums=('6d105e52da5f74eebb77d27f73285bfccf4f4ed828c3826b279bc9526b725aea' #
             '88827f67268c6ea5728d6a6edab841a39017c8710991f9d744a0acd840ee6f87')
 
 package() {
-	mkdir -p ${pkgdir}/etc/sddm.conf.d
-	echo "[General]" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
-	echo "DisplayServer=wayland" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
-	echo "[Autologin]" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
-	echo "Relogin=true" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
-	echo "Session=steamos.desktop" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
-	echo "User=gamer" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
-	echo "[X11]" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
-	echo "# Janky workaround for wayland sessions not stopping in sddm, kills" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
-	echo "# all active sddm-helper sessions on teardown" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
-	echo "DisplayStopCommand=/usr/bin/gamescope-wayland-teardown-workaround" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
+	#mkdir -p ${pkgdir}/etc/sddm.conf.d
+	#echo "[General]" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
+	#echo "DisplayServer=wayland" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
+	#echo "[Autologin]" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
+	#echo "Relogin=true" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
+	#echo "Session=steamos.desktop" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
+	#echo "User=gamer" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
+	#echo "[X11]" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
+	#echo "# Janky workaround for wayland sessions not stopping in sddm, kills" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
+	#echo "# all active sddm-helper sessions on teardown" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
+	#echo "DisplayStopCommand=/usr/bin/gamescope-wayland-teardown-workaround" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
 
-	mkdir -p ${pkgdir}/etc/systemd/logind.conf.d
-	echo "[Login]" > ${pkgdir}/etc/systemd/logind.conf.d/steam-deckify.conf
-	echo "HandlePowerKey=suspend" >> ${pkgdir}/etc/systemd/logind.conf.d/steam-deckify.conf
-	echo "HandleSuspendKey=suspend" >> ${pkgdir}/etc/systemd/logind.conf.d/steam-deckify.conf
-	
 	echo "[General]" > ${pkgdir}/etc/sddm.conf.d/virtualkbd.conf
 	echo "InputMethod=qtvirtualkeyboard" >> ${pkgdir}/etc/sddm.conf.d/virtualkbd.conf
 	
