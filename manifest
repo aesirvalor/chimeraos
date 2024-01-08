@@ -244,6 +244,18 @@ export FILES_TO_DELETE="\
 "
 
 postinstallhook() {
+	mkdir -p /etc/sddm.conf.d
+	echo "[General]" > /etc/sddm.conf.d/steam-deckify.conf
+	echo "DisplayServer=wayland" >> /etc/sddm.conf.d/steam-deckify.conf
+	echo "[Autologin]" >> /etc/sddm.conf.d/steam-deckify.conf
+	echo "Relogin=true" >> /etc/sddm.conf.d/steam-deckify.conf
+	echo "Session=steamos.desktop" >> /etc/sddm.conf.d/steam-deckify.conf
+	echo "User=${USERNAME}" >> /etc/sddm.conf.d/steam-deckify.conf
+	echo "[X11]" >> /etc/sddm.conf.d/steam-deckify.conf
+	echo "# Janky workaround for wayland sessions not stopping in sddm, kills" >> /etc/sddm.conf.d/steam-deckify.conf
+	echo "# all active sddm-helper sessions on teardown" >> /etc/sddm.conf.d/steam-deckify.conf
+	echo "DisplayStopCommand=/usr/bin/gamescope-wayland-teardown-workaround" >> /etc/sddm.conf.d/steam-deckify.conf
+
 	# Remove problematic software from the build
 	sudo pacman --noconfirm -Rnsdd powerdevil kscreenlocker
 
