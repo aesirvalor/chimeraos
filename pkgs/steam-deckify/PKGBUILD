@@ -10,7 +10,9 @@ license=('GPL')
 depends=(steam mangohud jq dmidecode glew glfw-x11 glxinfo curl tar qt5-virtualkeyboard)
 install=install
 
-source=(gamescope-wayland-teardown-workaround
+source=(
+	virtualkbd.conf
+	gamescope-wayland-teardown-workaround
 	org.neroreflex.host.policy
 	org.neroreflex.priv.write.policy
 	org.neroreflex.session.select.policy
@@ -39,7 +41,9 @@ source=(gamescope-wayland-teardown-workaround
 	assistant.desktop
 )
 
-sha256sums=('6d105e52da5f74eebb77d27f73285bfccf4f4ed828c3826b279bc9526b725aea' # gamescope-wayland-teardown-workaround
+sha256sums=(
+			'1c5f0b4c4206b16ae33eb7c7584618042e8b3ee58ea4d057ce6defbf37027c57' # virtualkbd.conf
+			'6d105e52da5f74eebb77d27f73285bfccf4f4ed828c3826b279bc9526b725aea' # gamescope-wayland-teardown-workaround
             '872054b72bfdcf844b9af9063d51579578eebf0319949b1f1358caef7db8510b' # org.neroreflex.host.policy
             'abb078a7cc938eb40bdbebd8a8d92bc80a7f12d61817a802a3331a1912d52ebe' # org.neroreflex.priv.write.policy
             '4f3645056fcb83f2461c7a3b3ef5907cc2fdcd1985188d0690428a30b3c0cd1a' # org.neroreflex.session.select.policy
@@ -80,9 +84,7 @@ package() {
 	#echo "# all active sddm-helper sessions on teardown" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
 	#echo "DisplayStopCommand=/usr/bin/gamescope-wayland-teardown-workaround" >> ${pkgdir}/etc/sddm.conf.d/steam-deckify.conf
 
-	echo "[General]" > ${pkgdir}/etc/sddm.conf.d/virtualkbd.conf
-	echo "InputMethod=qtvirtualkeyboard" >> ${pkgdir}/etc/sddm.conf.d/virtualkbd.conf
-	
+	install -Dm644 ${srcdir}/virtualkbd.conf -t ${pkgdir}/etc/sddm.conf.d
 	install -Dm755 ${srcdir}/steamos-gamemode.desktop -t ${pkgdir}/etc/skel/Desktop
 	install -Dm644 ${srcdir}/org.neroreflex.host.policy -t ${pkgdir}/usr/share/polkit-1/actions
 	install -Dm644 ${srcdir}/org.neroreflex.priv.write.policy -t ${pkgdir}/usr/share/polkit-1/actions
