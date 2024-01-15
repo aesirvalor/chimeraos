@@ -129,6 +129,7 @@ export PACKAGES="\
 	xz \
 	zip \
 	plasma \
+	kwin \
 	sddm \
 	gparted \
 "
