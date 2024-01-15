@@ -161,7 +161,7 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/rog-ally-gaming/sdl2/releases/download/sdl2-20231220/sdl2-git-2.28.0.r324.g5240071b1-1-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/repos/2023/06/28/extra/os/x86_64/libretro-pcsx2-11900-2-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/packages/l/libretro-mame/libretro-mame-85763-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/rogue-enemy/releases/download/v2.2.0-1/rogue-enemy-2.2.0-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/rogue-enemy/releases/download/v2.2.1-1/rogue-enemy-2.2.1-1-x86_64.pkg.tar.zst \
 "
 
 
