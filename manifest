@@ -304,5 +304,8 @@ postinstallhook() {
 
 	# remove r8169 blacklist in /usr, leave it up to the user
 	rm -rf /usr/lib/modprobe.d/r8168-dkms.conf
-} 
 
+	echo "" >> /etc/environment
+	echo "SDL_GAMECONTROLLER_IGNORE_DEVICES=\"0x045E/0x028E\"" >> /etc/environment
+	echo "ENABLE_GAMESCOPE_WSI=1" >> /etc/environment
+}
