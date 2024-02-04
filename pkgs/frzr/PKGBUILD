@@ -7,7 +7,7 @@ pkgdesc="A deployment and update system for read-only btrfs subvolume based oper
 arch=('any')
 url="https://github.com/NeroReflex/frzr"
 license=('MIT')
-depends=('btrfs-progs' 'parted' 'libnewt' 'dosfstools' 'jq' 'util-linux')
+depends=('btrfs-progs' 'parted' 'libnewt' 'dosfstools' 'jq' 'util-linux' 'zstd' 'xz')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
 sha256sums=('beba30ed2d19c2dbd4081f0a1808534264764704a328ba484bd0e5480cbd8a2c')
 
