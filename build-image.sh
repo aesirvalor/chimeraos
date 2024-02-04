@@ -231,7 +231,7 @@ IMG_FILENAME="${SYSTEM_NAME}-${VERSION}.img.tar.xz"
 btrfs subvolume snapshot -r ${BUILD_PATH} ${SNAP_PATH}
 
 if [ -z "${NO_COMPRESS}" ]; then
-	btrfs send ${SNAP_PATH} | xz -9 -T0 > ${IMG_FILENAME}
+	btrfs send ${SNAP_PATH} | tar cf - - | xz -9 -T0 > >(cat > ${IMG_FILENAME}.tar.xz)
 else
 	btrfs send -f ${SYSTEM_NAME}-${VERSION}.img ${SNAP_PATH}
 fi
