@@ -236,6 +236,7 @@ if [ -z "${NO_COMPRESS}" ]; then
 
 	btrfs send -f /tmpfs/${SYSTEM_NAME}-${VERSION}.img ${SNAP_PATH}
 	tar -c -I'xz -9 -T0' -f ${IMG_FILENAME} /tmpfs/${SYSTEM_NAME}-${VERSION}.img
+	umount /tmpfs
 else
 	btrfs send -f ${SYSTEM_NAME}-${VERSION}.img ${SNAP_PATH}
 fi
