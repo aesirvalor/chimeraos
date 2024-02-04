@@ -185,7 +185,6 @@ export AUR_PACKAGES="\
 	chimera \
 	chimeraos-device-quirks-git \
 	downgrade \
-	frzr \
 	gamescope-plus \
 	gamescope-session-steam-git \
 	gamescope-session-steam-plus-git \
