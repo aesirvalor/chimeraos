@@ -232,7 +232,7 @@ btrfs subvolume snapshot -r ${BUILD_PATH} ${SNAP_PATH}
 
 if [ -z "${NO_COMPRESS}" ]; then
 	mkdir /tmpfs
-	sudo mount -t tmpfs -o size=2G tmpfs /tmpfs
+	sudo mount -t tmpfs -o size=3G tmpfs /tmpfs
 
 	btrfs send -f /tmpfs/${SYSTEM_NAME}-${VERSION}.img ${SNAP_PATH}
 	tar -c -I'xz -9 -T0' -f ${IMG_FILENAME} /tmpfs/${SYSTEM_NAME}-${VERSION}.img
