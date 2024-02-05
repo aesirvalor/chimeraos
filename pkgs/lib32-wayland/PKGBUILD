@@ -21,8 +21,7 @@ makedepends=(meson)
 provides=(libwayland-{client,cursor,egl,server}.so)
 options=(debug)
 source=("https://gitlab.freedesktop.org/wayland/wayland/-/releases/$pkgver/downloads/wayland-$pkgver.tar.xz")
-sha256sums=('6dc64d7fc16837a693a51cfdb2e568db538bfdc9f457d4656285bb9594ef11ac'
-            'SKIP')
+sha256sums=('SKIP')
 
 build() {
   export CC="gcc -m32"
