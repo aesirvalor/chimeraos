@@ -134,6 +134,19 @@ export PACKAGES="\
 	kwin \
 	konsole \
 	sddm \
+	ark \
+	akonadi \
+	akonadi-calendar-tools \
+	akonadi-import-wizard \
+	kcron \
+	yakuake \
+	audiocd-kio \
+	kate \
+	knote \
+	kcalc \
+	kgpg \
+	kio-extras \
+	kwalletmanager \
 	gparted \
 "
 
@@ -258,8 +271,6 @@ postinstallhook() {
 	echo "# Janky workaround for wayland sessions not stopping in sddm, kills" >> /etc/sddm.conf.d/steam-deckify.conf
 	echo "# all active sddm-helper sessions on teardown" >> /etc/sddm.conf.d/steam-deckify.conf
 	echo "DisplayStopCommand=/usr/bin/gamescope-wayland-teardown-workaround" >> /etc/sddm.conf.d/steam-deckify.conf
-
-	sudo pacman --noconfirm -S kde-applications
 
 	# Add sudo permissions
 	sed -i '/%wheel ALL=(ALL:ALL) ALL/s/^# //g' /etc/sudoers
