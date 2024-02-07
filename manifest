@@ -142,7 +142,7 @@ export PACKAGES="\
 	yakuake \
 	audiocd-kio \
 	kate \
-	knote \
+	knotes \
 	kcalc \
 	kgpg \
 	kio-extras \
