@@ -32,7 +32,6 @@ export PACKAGES="\
 	distrobox \
 	dmidecode \
 	dosbox \
-	dolphin \
 	efibootmgr \
 	epiphany \
 	evtest \
@@ -133,20 +132,6 @@ export PACKAGES="\
 	kwin \
 	konsole \
 	sddm \
-	milou \
-	ark \
-	akonadi \
-	akonadi-calendar-tools \
-	akonadi-import-wizard \
-	kcron \
-	audiocd-kio \
-	kate \
-	knotes \
-	kcalc \
-	kgpg \
-	kio-extras \
-	kwalletmanager \
-	gparted \
 "
 
 export PACKAGE_OVERRIDES="\
@@ -222,6 +207,7 @@ export AUR_PACKAGES="\
 	wyvern \
 	ryujinx-git \
 	zenergy-dkms-git \
+	frzr \
 "
 
 export SERVICES="\
