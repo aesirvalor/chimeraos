@@ -148,9 +148,6 @@ export PACKAGES="\
 	kio-extras \
 	kwalletmanager \
 	gparted \
-	pkg-config \
-	bison \
-	flex \
 "
 
 export PACKAGE_OVERRIDES="\
