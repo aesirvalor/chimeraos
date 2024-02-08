@@ -54,7 +54,6 @@ export PACKAGES="\
 	intel-gpu-tools \
 	intel-media-driver \
 	intel-ucode \
-	intel-undervolt \
 	iio-sensor-proxy \
 	less \
 	lib32-curl \
@@ -139,7 +138,6 @@ export PACKAGES="\
 	akonadi-calendar-tools \
 	akonadi-import-wizard \
 	kcron \
-	yakuake \
 	audiocd-kio \
 	kate \
 	knotes \
