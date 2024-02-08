@@ -133,6 +133,7 @@ export PACKAGES="\
 	kwin \
 	konsole \
 	sddm \
+	milou \
 	ark \
 	akonadi \
 	akonadi-calendar-tools \
