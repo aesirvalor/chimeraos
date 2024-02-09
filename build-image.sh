@@ -226,8 +226,15 @@ if [ -z "${ARCHIVE_DATE}" ]; then
 	${BUILD_PATH}/etc/pacman.d/mirrorlist
 fi
 
+IMG_FILENAME="${SYSTEM_NAME}-${VERSION}.img.xz"
+
 btrfs subvolume snapshot -r ${BUILD_PATH} ${SNAP_PATH}
-btrfs send -f ${SYSTEM_NAME}-${VERSION}.img ${SNAP_PATH}
+
+if [ -z "${NO_COMPRESS}" ]; then
+	btrfs send ${SNAP_PATH} | xz -9 -T0 > ${IMG_FILENAME}
+else
+	btrfs send -f ${SYSTEM_NAME}-${VERSION}.img ${SNAP_PATH}
+fi
 
 cp ${BUILD_PATH}/build_info build_info.txt
 
@@ -237,12 +244,8 @@ umount -l ${MOUNT_PATH}
 rm -rf ${MOUNT_PATH}
 rm -rf ${BUILD_IMG}
 
-IMG_FILENAME="${SYSTEM_NAME}-${VERSION}.img.tar.xz"
 if [ -z "${NO_COMPRESS}" ]; then
-	tar -c -I'xz -8 -T4' -f ${IMG_FILENAME} ${SYSTEM_NAME}-${VERSION}.img
-	rm ${SYSTEM_NAME}-${VERSION}.img
-
-	sha256sum ${SYSTEM_NAME}-${VERSION}.img.tar.xz > sha256sum.txt
+	sha256sum ${IMG_FILENAME} > sha256sum.txt
 	cat sha256sum.txt
 
 	# Move the image to the output directory, if one was specified.
