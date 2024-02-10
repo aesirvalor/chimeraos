@@ -213,7 +213,6 @@ export AUR_PACKAGES="\
 	wyvern \
 	ryujinx-git \
 	zenergy-dkms-git \
-	frzr \
 "
 
 export SERVICES="\
