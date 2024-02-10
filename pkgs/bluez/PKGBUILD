@@ -17,17 +17,13 @@ source=(https://www.kernel.org/pub/linux/bluetooth/${pkgname}-${pkgver}.tar.xz
         AVRCP_TG_MDI_BV-04-C.patch         # SteamOS: For Bluetooth AVRCP certification test AVRCP/TG/MDI/BV-04-C, which requires a valid response from the get_element_attributes command.
         0001-valve-bluetooth-config.patch  # SteamOS: Enable compatibility with devices like AirPods Pro
         0002-valve-bluetooth-phy.patch     # SteamOS: Enable the phy
-        fix-bluez-5.71-autoconnection.diff
 )
 # see https://www.kernel.org/pub/linux/bluetooth/sha256sums.asc
 sha256sums=('499d7fa345a996c1bb650f5c6749e1d929111fa6ece0be0e98687fee6124536e'
             '46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4'
             'd863bd52917e4f5819b23ae5e64a34c5b02a0cfdf3969290bfce0d26dfe137b4'
             '54f7fc21fe0b7caf8018e12c8ca368bb308aeb757acf8b6038a6cbecad735ac3'
-            '5d291d833c234a14b6162e3cb14eeff41505f5c3bb7c74528b65cb10597f39cb'
-            '7b19092fa09f8b04314cda3e9d14e69ef79bd85bc4f19ca2e15c35ebbb486e48'
-)
-
+            '5d291d833c234a14b6162e3cb14eeff41505f5c3bb7c74528b65cb10597f39cb')
 validpgpkeys=('E932D120BC2AEC444E558F0106CA9F5D1DCF2659') # Marcel Holtmann <marcel@holtmann.org>
 
 build() {
@@ -81,10 +77,6 @@ prepare() {
   patch -d "${pkgname}"-${pkgver} -p1 -i "${srcdir}"/AVRCP_TG_MDI_BV-04-C.patch
   patch -d "${pkgname}"-${pkgver} -p1 -i "${srcdir}"/0001-valve-bluetooth-config.patch
   patch -d "${pkgname}"-${pkgver} -p1 -i "${srcdir}"/0002-valve-bluetooth-phy.patch
-
-  # fix autoconnection - https://github.com/bluez/bluez/issues/686
-  # https://github.com/tedd-an/bluez-upstream-test/pull/484
-  patch -d "${pkgname}"-${pkgver} -p1 -i "${srcdir}"/fix-bluez-5.71-autoconnection.diff
 }
 
 package_bluez() {
