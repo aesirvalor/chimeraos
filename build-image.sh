@@ -94,6 +94,9 @@ sed -i '/CheckSpace/s/^/#/g' /etc/pacman.conf
 # update package databases
 pacman --noconfirm -Syy
 
+echo "debug: outputting /lib/modules (0)"
+ls -lah /lib/modules
+
 # install kernel package
 if [ "$KERNEL_PACKAGE_ORIGIN" == "local" ] ; then
 	pacman --noconfirm -U --overwrite '*' \
@@ -109,7 +112,6 @@ ls -lah /lib/modules
 pacman --noconfirm -U --overwrite '*' /own_pkgs/*
 rm -rf /var/cache/pacman/pkg
 
-
 echo "debug: outputting /lib/modules (2)"
 ls -lah /lib/modules
 
@@ -117,11 +119,14 @@ ls -lah /lib/modules
 pacman --noconfirm -S --overwrite '*' --disable-download-timeout ${PACKAGES}
 rm -rf /var/cache/pacman/pkg
 
+echo "debug: outputting /lib/modules (3)"
+ls -lah /lib/modules
+
 # install AUR packages
 pacman --noconfirm -U --overwrite '*' /extra_pkgs/*
 rm -rf /var/cache/pacman/pkg
 
-echo "debug: outputting /lib/modules (2)"
+echo "debug: outputting /lib/modules (4)"
 ls -lah /lib/modules
 
 
@@ -204,6 +209,9 @@ if [ ${KERNEL_PACKAGE} != 'linux' ] ; then
 	mv /boot/initramfs-${KERNEL_PACKAGE}-fallback.img /boot/initramfs-linux-fallback.img
 fi
 
+echo "debug: outputting /lib/modules (5)"
+ls -lah /lib/modules
+
 # clean up/remove unnecessary files
 rm -rf \
 /own_pkgs \
@@ -213,6 +221,9 @@ rm -rf \
 /var \
 
 rm -rf ${FILES_TO_DELETE}
+
+echo "debug: outputting /lib/modules (6)"
+ls -lah /lib/modules
 
 # create necessary directories
 mkdir /home
