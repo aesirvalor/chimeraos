@@ -139,7 +139,6 @@ export PACKAGES="\
 	akonadi-calendar-tools \
 	akonadi-import-wizard \
 	kcron \
-	audiocd-kio \
 	kate \
 	knotes \
 	kcalc \
