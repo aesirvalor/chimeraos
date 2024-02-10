@@ -188,14 +188,12 @@ export AUR_PACKAGES="\
 	chimera \
 	chimeraos-device-quirks-git \
 	downgrade \
-	gamescope-plus \
 	gamescope-session-steam-git \
 	gamescope-session-steam-plus-git \
 	hhfc-git \
 	legendary \
 	lib32-gamescope-plus \
 	lib32-gperftools \
-	lib32-vulkan-nouveau-git \
 	libretro-dosbox-pure-git \
 	libretro-opera-git \
 	libretro-prosystem-git \
