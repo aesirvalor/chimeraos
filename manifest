@@ -137,7 +137,6 @@ export PACKAGES="\
 	ark \
 	kcron \
 	kate \
-	knotes \
 	kgpg \
 	gparted \
 "
