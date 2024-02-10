@@ -21,12 +21,14 @@ export PACKAGES="\
 	llvm \
 	lld \
 	accountsservice \
+	acpi_call-dkms \
 	alsa-firmware \
 	alsa-utils \
 	amd-ucode \
 	bash-completion \
 	bzip2 \
 	cifs-utils \
+	cpupower \
 	diffutils \
 	dkms \
 	distrobox \
@@ -45,9 +47,9 @@ export PACKAGES="\
 	fuse-zip \
 	fuse2 \
 	fwupd \
-	gamemode \
 	git \
 	gst-plugin-pipewire \
+	gvfs-smb \
 	gzip \
 	haveged \
 	htop \
@@ -59,7 +61,6 @@ export PACKAGES="\
 	lib32-curl \
 	lib32-fontconfig \
 	lib32-freetype2 \
-	lib32-gamemode \
 	lib32-libgpg-error \
 	lib32-libnm \
 	lib32-libxinerama \
@@ -194,6 +195,7 @@ export PACKAGE_OVERRIDES="\
 #
 export AUR_PACKAGES="\
 	bcm20702a1-firmware \
+  	bmi260-dkms \
 	boxtron \
 	chimera \
 	chimeraos-device-quirks-git \
@@ -205,6 +207,7 @@ export AUR_PACKAGES="\
 	legendary \
 	lib32-gamescope-plus \
 	lib32-gperftools \
+	lib32-vulkan-nouveau-git \
 	libretro-dosbox-pure-git \
 	libretro-opera-git \
 	libretro-prosystem-git \
@@ -242,7 +245,6 @@ export SERVICES="\
 
 export USER_SERVICES="\
 	chimera.service \
-	gamemoded.service \
 	pipewire \
 	steam-patch.service \
 "
