@@ -102,9 +102,16 @@ else
 	pacman --noconfirm -S "${KERNEL_PACKAGE}" "${KERNEL_PACKAGE}-headers"
 fi
 
+echo "debug: outputting /lib/modules (1)"
+ls -lah /lib/modules
+
 # install own override packages
 pacman --noconfirm -U --overwrite '*' /own_pkgs/*
 rm -rf /var/cache/pacman/pkg
+
+
+echo "debug: outputting /lib/modules (2)"
+ls -lah /lib/modules
 
 # install packages
 pacman --noconfirm -S --overwrite '*' --disable-download-timeout ${PACKAGES}
@@ -113,6 +120,10 @@ rm -rf /var/cache/pacman/pkg
 # install AUR packages
 pacman --noconfirm -U --overwrite '*' /extra_pkgs/*
 rm -rf /var/cache/pacman/pkg
+
+echo "debug: outputting /lib/modules (2)"
+ls -lah /lib/modules
+
 
 # enable services
 systemctl enable ${SERVICES}
