@@ -145,7 +145,6 @@ export PACKAGES="\
 	kcalc \
 	kgpg \
 	kio-extras \
-	kwalletmanager \
 	gparted \
 "
 
