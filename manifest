@@ -21,7 +21,6 @@ export PACKAGES="\
 	llvm \
 	lld \
 	accountsservice \
-	acpi_call-dkms \
 	alsa-firmware \
 	alsa-utils \
 	amd-ucode \
