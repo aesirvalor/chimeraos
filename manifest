@@ -195,7 +195,6 @@ export PACKAGE_OVERRIDES="\
 #
 export AUR_PACKAGES="\
 	bcm20702a1-firmware \
-  	bmi260-dkms \
 	boxtron \
 	chimera \
 	chimeraos-device-quirks-git \
