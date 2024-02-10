@@ -144,7 +144,6 @@ export PACKAGES="\
 	knotes \
 	kcalc \
 	kgpg \
-	kio-extras \
 	gparted \
 "
 
