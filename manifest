@@ -135,9 +135,6 @@ export PACKAGES="\
 	sddm \
 	milou \
 	ark \
-	akonadi \
-	akonadi-calendar-tools \
-	akonadi-import-wizard \
 	kcron \
 	kate \
 	knotes \
