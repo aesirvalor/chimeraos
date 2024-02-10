@@ -94,8 +94,10 @@ sed -i '/CheckSpace/s/^/#/g' /etc/pacman.conf
 # update package databases
 pacman --noconfirm -Syy
 
+pacman -S --noconfirm tree
+
 echo "debug: outputting /lib/modules (0)"
-ls -lah /lib/modules
+tree /lib
 
 # install kernel package
 if [ "$KERNEL_PACKAGE_ORIGIN" == "local" ] ; then
@@ -106,28 +108,28 @@ else
 fi
 
 echo "debug: outputting /lib/modules (1)"
-ls -lah /lib/modules
+tree /lib
 
 # install own override packages
 pacman --noconfirm -U --overwrite '*' /own_pkgs/*
 rm -rf /var/cache/pacman/pkg
 
 echo "debug: outputting /lib/modules (2)"
-ls -lah /lib/modules
+tree /lib
 
 # install packages
 pacman --noconfirm -S --overwrite '*' --disable-download-timeout ${PACKAGES}
 rm -rf /var/cache/pacman/pkg
 
 echo "debug: outputting /lib/modules (3)"
-ls -lah /lib/modules
+tree /lib
 
 # install AUR packages
 pacman --noconfirm -U --overwrite '*' /extra_pkgs/*
 rm -rf /var/cache/pacman/pkg
 
 echo "debug: outputting /lib/modules (4)"
-ls -lah /lib/modules
+tree /lib
 
 
 # enable services
@@ -210,7 +212,7 @@ if [ ${KERNEL_PACKAGE} != 'linux' ] ; then
 fi
 
 echo "debug: outputting /lib/modules (5)"
-ls -lah /lib/modules
+tree /lib
 
 # clean up/remove unnecessary files
 rm -rf \
@@ -223,7 +225,7 @@ rm -rf \
 rm -rf ${FILES_TO_DELETE}
 
 echo "debug: outputting /lib/modules (6)"
-ls -lah /lib/modules
+tree /lib
 
 # create necessary directories
 mkdir /home
