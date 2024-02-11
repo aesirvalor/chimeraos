@@ -138,6 +138,7 @@ export PACKAGES="\
 	kcron \
 	kate \
 	knotes \
+	kcalc \
 	kgpg \
 	gparted \
 "
