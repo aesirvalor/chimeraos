@@ -135,6 +135,7 @@ export PACKAGES="\
 	sddm \
 	milou \
 	ark \
+	kate \
 	kgpg \
 	gparted \
 "
