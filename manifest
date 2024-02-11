@@ -140,6 +140,7 @@ export PACKAGES="\
 	knotes \
 	kcalc \
 	kgpg \
+	kwalletmanager \
 	gparted \
 "
 
