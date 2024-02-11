@@ -143,24 +143,24 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/linux-chimeraos-6.1.77.nrflx1-1/linux-neroreflex-6.1.77.nrflx1-1-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/linux-chimeraos-6.1.77.nrflx1-1/linux-neroreflex-api-headers-6.1.77.nrflx1-1-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/linux-chimeraos-6.1.77.nrflx1-1/linux-neroreflex-headers-6.1.77.nrflx1-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/lib32-libva-mesa-driver-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/lib32-mesa-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/lib32-mesa-vdpau-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/lib32-opencl-clover-mesa-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/lib32-opencl-rusticl-mesa-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/lib32-vulkan-mesa-layers-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/lib32-vulkan-radeon-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/lib32-vulkan-swrast-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/lib32-vulkan-virtio-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/libva-mesa-driver-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/mesa-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/mesa-vdpau-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/opencl-clover-mesa-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/opencl-rusticl-mesa-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/vulkan-mesa-layers-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/vulkan-radeon-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/vulkan-swrast-23.3.3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3/vulkan-virtio-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/lib32-libva-mesa-driver-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/lib32-mesa-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/lib32-mesa-vdpau-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/lib32-opencl-clover-mesa-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/lib32-opencl-rusticl-mesa-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/lib32-vulkan-mesa-layers-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/lib32-vulkan-radeon-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/lib32-vulkan-swrast-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/lib32-vulkan-virtio-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/libva-mesa-driver-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/mesa-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/mesa-vdpau-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/opencl-clover-mesa-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/opencl-rusticl-mesa-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/vulkan-mesa-layers-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/vulkan-radeon-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/vulkan-swrast-23.3.3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v23.3.3-release/vulkan-virtio-23.3.3-1-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/asusctl/releases/download/5.0.7-1/asusctl-5.0.7-1-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/asusctl/releases/download/5.0.7-1/rog-control-center-5.0.7-1-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/sdl2/releases/download/sdl2-20231220/sdl2-git-2.28.0.r324.g5240071b1-1-x86_64.pkg.tar.zst \
