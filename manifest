@@ -116,6 +116,7 @@ export PACKAGES="\
 	usbutils \
 	vim \
 	vulkan-icd-loader \
+	vulkan-tools \
 	wavpack \
 	wget \
 	which \
