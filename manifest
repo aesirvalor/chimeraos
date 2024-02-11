@@ -297,5 +297,7 @@ postinstallhook() {
 
 	echo "" >> /etc/environment
 	echo "SDL_GAMECONTROLLER_IGNORE_DEVICES=\"0x045E/0x028E\"" >> /etc/environment
-	echo "ENABLE_GAMESCOPE_WSI=1" >> /etc/environment
+	echo "" >> /etc/environment
+	echo "# This makes a few games (like Ori and the blind forest) crash as startup for not being able to create the rendering surface" >> /etc/environment
+	echo "#ENABLE_GAMESCOPE_WSI=1" >> /etc/environment
 }
