@@ -136,12 +136,6 @@ export PACKAGES="\
 	sddm \
 	milou \
 	ark \
-	kcron \
-	kate \
-	knotes \
-	kcalc \
-	kgpg \
-	kwalletmanager \
 	gparted \
 "
 
