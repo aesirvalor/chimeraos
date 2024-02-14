@@ -137,7 +137,6 @@ export PACKAGES="\
 	milou \
 	ark \
 	kate \
-	knotes \
 	kcalc \
 	gparted \
 "
