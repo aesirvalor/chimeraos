@@ -35,8 +35,10 @@ RUN mkdir -p /etc/gnupg/ && echo -e "keyserver-options auto-key-retrieve" >> /et
 RUN echo -e "#!/bin/bash\nif [[ \"$1\" == \"--version\" ]]; then echo 'fake 244 version'; fi\nmkdir -p /var/cache/pikaur\n" >> /usr/bin/systemd-run && \
     chmod +x /usr/bin/systemd-run
 
-# substitute check with !check to avoid running software from AUR in the build machine
-RUN sed -i -e 's/BUILDENV=(!distcc color !ccache check !sign)/BUILDENV=(!distcc color !ccache !check !sign)/g' /etc/makepkg.conf
+# substitute check with !check to avoid running software from AUR in the build machine while also removing creation of debug packages.
+RUN sed -i '/BUILDENV/s/check/!check/g' /etc/makepkg.conf && \
+    sed -i '/OPTIONS/s/debug/!debug/g' /etc/makepkg.conf
+
 RUN sed -i -e 's/-march=x86-64/-march=x86-64-v3/g' /etc/makepkg.conf
 RUN sed -i -e 's/-mtune=generic/-mtune=znver4/g' /etc/makepkg.conf
 
