@@ -219,6 +219,7 @@ export AUR_PACKAGES="\
 	ryujinx-git \
 	zenergy-dkms-git \
 	matchbox-keyboard \
+	nvtop \
 "
 
 export SERVICES="\
