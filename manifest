@@ -90,6 +90,7 @@ export PACKAGES="\
 	noto-fonts-emoji \
 	nss-mdns \
 	openal \
+	openrazer-daemon \
 	openssh \
 	p7zip \
 	pipewire \
@@ -135,6 +136,11 @@ export PACKAGES="\
 	konsole \
 	sddm \
 	milou \
+	onboard \
+	maliit-keyboard \
+	anthy \
+	libchewing \
+	libpinyin \
 	ark \
 	kate \
 	kcalc \
@@ -202,6 +208,7 @@ export AUR_PACKAGES="\
 	nintendo-udev \
 	pikaur \
 	powerstation-bin \
+	polychromatic \
 	python-vdf \
 	retroarch-autoconfig-udev-git \
 	ryzenadj-git \
@@ -211,6 +218,7 @@ export AUR_PACKAGES="\
 	wyvern \
 	ryujinx-git \
 	zenergy-dkms-git \
+	matchbox-keyboard \
 "
 
 export SERVICES="\
