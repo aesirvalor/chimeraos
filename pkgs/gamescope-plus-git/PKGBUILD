@@ -7,7 +7,7 @@
 
 _pkgname=gamescope
 pkgname=gamescope-plus-git
-pkgver=3.13.19.13.g67567c9
+pkgver=3.13.19.14.g7f112d5
 pkgrel=1
 pkgdesc='SteamOS session compositing window manager with added patches'
 arch=(x86_64)
@@ -96,11 +96,13 @@ pkgver() {
 
 build() {
   export LDFLAGS="$LDFLAGS -lrt"
+  export CFLAGS="$CFLAGS -DGLM_ENABLE_EXPERIMENTAL "
   arch-meson gamescope build \
     -Dforce_fallback_for=stb,libliftoff,wlroots \
     -Dpipewire=enabled \
     -Dwlroots:backends=drm,libinput,x11 \
-    -Dwlroots:renderers=gles2,vulkan
+    -Dwlroots:renderers=gles2,vulkan \
+    -Denable_openvr_support=false
   ninja -C build
 }
 
