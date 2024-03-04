@@ -48,7 +48,6 @@ export PACKAGES="\
 	fwupd \
 	git \
 	gst-plugin-pipewire \
-	gvfs-smb \
 	gzip \
 	haveged \
 	htop \
@@ -84,7 +83,6 @@ export PACKAGES="\
 	mesa-demos \
 	modemmanager \
 	nano \
-	nautilus \
 	networkmanager \
 	nfs-utils \
 	noto-fonts-emoji \
@@ -136,7 +134,6 @@ export PACKAGES="\
 	konsole \
 	sddm \
 	milou \
-	onboard \
 	ark \
 	kate \
 	kcalc \
