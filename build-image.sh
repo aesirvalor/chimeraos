@@ -231,7 +231,7 @@ IMG_FILENAME="${SYSTEM_NAME}-${VERSION}.img.xz"
 btrfs subvolume snapshot -r ${BUILD_PATH} ${SNAP_PATH}
 
 if [ -z "${NO_COMPRESS}" ]; then
-	btrfs send ${SNAP_PATH} | xz -9 -T0 > ${IMG_FILENAME}
+	btrfs send ${SNAP_PATH} | xz -e -9 --memory=95% -T0 > ${IMG_FILENAME}
 else
 	btrfs send -f ${SYSTEM_NAME}-${VERSION}.img ${SNAP_PATH}
 fi
