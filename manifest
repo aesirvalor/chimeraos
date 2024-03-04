@@ -219,6 +219,7 @@ export AUR_PACKAGES="\
 	zenergy-dkms-git \
 	matchbox-keyboard \
 	nvtop \
+	rtcqs \
 "
 
 export SERVICES="\
