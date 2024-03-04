@@ -219,7 +219,6 @@ export AUR_PACKAGES="\
 	zenergy-dkms-git \
 	matchbox-keyboard \
 	nvtop \
-	sdl2-git \
 "
 
 export SERVICES="\
