@@ -137,14 +137,9 @@ export PACKAGES="\
 	sddm \
 	milou \
 	onboard \
-	maliit-keyboard \
-	anthy \
-	libchewing \
-	libpinyin \
 	ark \
 	kate \
 	kcalc \
-	gparted \
 "
 
 export PACKAGE_OVERRIDES="\

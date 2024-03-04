@@ -5,7 +5,7 @@
     disable_nvidia_powerd_on_battery: true,
     ac_command: "",
     bat_command: "",
-    platform_policy_linked_epp: false,
+    platform_policy_linked_epp: true,
     platform_policy_on_battery: Balanced,
     platform_policy_on_ac: Performance,
     ppt_pl1_spl: None,
