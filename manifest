@@ -198,7 +198,6 @@ export AUR_PACKAGES="\
 	nintendo-udev \
 	pikaur \
 	powerstation-bin \
-	polychromatic \
 	python-vdf \
 	retroarch-autoconfig-udev-git \
 	ryzenadj-git \
