@@ -125,7 +125,6 @@ passwd --lock root
 
 # create user
 groupadd -r autologin
-groupadd -r realtime
 useradd -m ${USERNAME} -G autologin,wheel,audio,video,realtime
 echo "${USERNAME}:${USERNAME}" | chpasswd
 
