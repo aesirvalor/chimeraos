@@ -92,7 +92,6 @@ export PACKAGES="\
 	p7zip \
 	pipewire \
 	pipewire-alsa \
-	pipewire-jack \
 	pipewire-pulse \
 	podman \
 	pulsemixer \
@@ -130,12 +129,14 @@ export PACKAGES="\
 	plasma \
 	plasma-desktop \
 	kwin \
-	konsole \
 	sddm \
 	milou \
 	ark \
 	kate \
 	kcalc \
+	qjackctl \
+	jack2 \
+	realtime \
 "
 
 export PACKAGE_OVERRIDES="\
