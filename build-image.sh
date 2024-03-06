@@ -226,31 +226,18 @@ if [ -z "${ARCHIVE_DATE}" ]; then
 	${BUILD_PATH}/etc/pacman.d/mirrorlist
 fi
 
-if [ -n "${OUTPUT_DIR}" ]; then
-	mkdir -p "${OUTPUT_DIR}"
-fi
-
 IMG_FILENAME="${SYSTEM_NAME}-${VERSION}.split"
 
 btrfs subvolume snapshot -r ${BUILD_PATH} ${SNAP_PATH}
 
 if [ -z "${NO_COMPRESS}" ]; then
-	if [ -n "${OUTPUT_DIR}" ]; then
-		btrfs send ${SNAP_PATH} | xz -e -9 --memory=95% -T0 | split -b 2G - ${OUTPUT_DIR}/${IMG_FILENAME}.part.
-		ls -lah ${OUTPUT_DIR} > ${OUTPUT_DIR}/${IMG_FILENAME}
-	else
-		btrfs send ${SNAP_PATH} | xz -e -9 --memory=95% -T0 | split -b 2G - ${IMG_FILENAME}.part.
-		ls -lah ${IMG_FILENAME}.part.* > ${IMG_FILENAME}
-	fi
+	btrfs send ${SNAP_PATH} | xz -e -9 --memory=95% -T0 | split -b 2G - "${IMG_FILENAME}.part."
+	ls -lah ${IMG_FILENAME}.part.* > ${IMG_FILENAME}
 else
 	btrfs send -f ${SYSTEM_NAME}-${VERSION}.img ${SNAP_PATH}
 fi
 
-if [ -n "${OUTPUT_DIR}" ]; then
-	cp ${BUILD_PATH}/build_info ${OUTPUT_DIR}/build_info.txt
-else
-	cp build_info build_info.txt
-fi
+cp ${BUILD_PATH}/build_info build_info.txt
 
 # clean up
 umount -l ${BUILD_PATH}
@@ -259,12 +246,16 @@ rm -rf ${MOUNT_PATH}
 rm -rf ${BUILD_IMG}
 
 if [ -z "${NO_COMPRESS}" ]; then
+	sha256sum ${IMG_FILENAME} "${IMG_FILENAME}.part.*" > sha256sum.txt
+	cat sha256sum.txt
+
+	# Move the image to the output directory, if one was specified.
 	if [ -n "${OUTPUT_DIR}" ]; then
-		sha256sum ${OUTPUT_DIR}/${IMG_FILENAME} ${OUTPUT_DIR}/${IMG_FILENAME}.part.* > ${OUTPUT_DIR}/sha256sum.txt
-		cat ${OUTPUT_DIR}/sha256sum.txt
-	else
-		sha256sum ${IMG_FILENAME} ${IMG_FILENAME}.part.* > sha256sum.txt
-		cat sha256sum.txt
+		mkdir -p "${OUTPUT_DIR}"
+		mv ${IMG_FILENAME}.part.* ${OUTPUT_DIR}
+		mv ${IMG_FILENAME} ${OUTPUT_DIR}
+		mv build_info.txt ${OUTPUT_DIR}
+		mv sha256sum.txt ${OUTPUT_DIR}
 	fi
 
 	# set outputs for github actions
