@@ -217,7 +217,6 @@ export AUR_PACKAGES="\
 	wyvern \
 	zenergy-dkms-git \
 	matchbox-keyboard \
-	nvtop \
 	rtcqs \
 "
 
