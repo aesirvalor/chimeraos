@@ -134,6 +134,7 @@ export PACKAGES="\
 	ark \
 	kate \
 	kdenetwork-filesharing \
+	dolphin-plugins \
 	qjackctl \
 	jack2 \
 	lib32-jack2 \
