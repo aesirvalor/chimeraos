@@ -133,7 +133,7 @@ export PACKAGES="\
 	milou \
 	ark \
 	kate \
-	kcalc \
+	kdenetwork-filesharing \
 	qjackctl \
 	jack2 \
 	lib32-jack2 \
@@ -307,4 +307,7 @@ postinstallhook() {
 	echo "" >> /etc/environment
 	echo "# This makes a few games (like Ori and the blind forest) crash as startup for not being able to create the rendering surface" >> /etc/environment
 	echo "#ENABLE_GAMESCOPE_WSI=1" >> /etc/environment
+
+	# Remove discover software
+	pacman -R discover
 }
