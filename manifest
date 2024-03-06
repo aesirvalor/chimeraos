@@ -20,6 +20,9 @@ export PACKAGES="\
 	clang \
 	llvm \
 	lld \
+	flex \
+	bison \
+	bc \
 	accountsservice \
 	alsa-firmware \
 	alsa-utils \
@@ -133,6 +136,8 @@ export PACKAGES="\
 	milou \
 	ark \
 	kate \
+	kcalc \
+	kdeconnect \
 	kdenetwork-filesharing \
 	dolphin-plugins \
 	qjackctl \
