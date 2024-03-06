@@ -315,4 +315,6 @@ postinstallhook() {
 
 	# Remove discover software
 	pacman -R discover
+
+	yes|pacman -Scc
 }
