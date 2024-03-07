@@ -105,13 +105,13 @@ fi
 # Install custom mesa
 mkdir /mesa
 mv own_pkgs/lib32-mesa*.pkg.tar* /mesa
-mv own_pkgs/lib32-libva-mesa /mesa
-mv own_pkgs/lib32-vulkan /mesa
-mv own_pkgs/lib32-opencl /mesa
+mv own_pkgs/lib32-libva-mesa* /mesa
+mv own_pkgs/lib32-vulkan* /mesa
+mv own_pkgs/lib32-opencl* /mesa
 mv own_pkgs/mesa*.pkg.tar* /mesa
-mv own_pkgs/libva-mesa /mesa
-mv own_pkgs/vulkan /mesa
-mv own_pkgs/opencl /mesa
+mv own_pkgs/libva-mesa* /mesa
+mv own_pkgs/vulkan* /mesa
+mv own_pkgs/opencl* /mesa
 yes|pacman -U --overwrite '*' /mesa/*
 
 # install own override packages
