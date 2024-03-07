@@ -231,7 +231,7 @@ export FILES_TO_DELETE="\
 
 postinstallhook() {
 	# Remove discover software
-	pacman -R discover
+	pacman -R --noconfirm discover
 	#yes|pacman -Scc
 	ls -lah /var/cache/pacman
 
