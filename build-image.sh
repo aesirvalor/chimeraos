@@ -102,6 +102,13 @@ else
 	pacman --noconfirm -S "${KERNEL_PACKAGE}" "${KERNEL_PACKAGE}-headers"
 fi
 
+# Install custom mesa
+mkdir /mesa
+mv own_pkgs/lib32-mesa*.pkg.tar* /mesa
+mv own_pkgs/mesa*.pkg.tar* /mesa
+yes|pacman -U --overwrite '*' /mesa/*
+rm -rf /mesa
+
 # install own override packages
 pacman --noconfirm -U --overwrite '*' /own_pkgs/*
 rm -rf /var/cache/pacman/pkg
