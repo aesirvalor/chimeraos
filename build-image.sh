@@ -94,10 +94,6 @@ sed -i '/CheckSpace/s/^/#/g' /etc/pacman.conf
 # update package databases
 pacman --noconfirm -Syy
 
-# chimeraos requires ladspa-host and the default provider is ardour
-# install qtractor to spare space
-pacman --noconfirm -Sy qtractor
-
 # install kernel package
 if [ "$KERNEL_PACKAGE_ORIGIN" == "local" ] ; then
 	pacman --noconfirm -U --overwrite '*' \
