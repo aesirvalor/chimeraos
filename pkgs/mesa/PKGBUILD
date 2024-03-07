@@ -120,11 +120,11 @@ validpgpkeys=('8703B6700E7EE06D7A39B8D6EDAE37B02CEB490D'  # Emil Velikov <emil.l
 prepare() {
   dirname=$(find -maxdepth 1 -type d | grep "mesa")
 
+  echo "lib32-mesa"
   cp -r $dirname lib32-mesa
-  cd lib32-mesa
 
+  echo "mesa"
   cp -r $dirname mesa
-  cd mesa
 
   rm -rf "$dirname"
 
@@ -133,6 +133,16 @@ prepare() {
   # https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/2020604
   echo "$pkgver-$epoch.$pkgrel" >VERSION
 
+  cd lib32-mesa
+  for src in "${source[@]}"; do
+    src="${src%%::*}"
+    src="${src##*/}"
+    [[ $src = *.patch ]] || continue
+    echo "Applying patch $src..."
+    patch -Np1 < "../$src"
+  done
+
+  cd ../mesa
   for src in "${source[@]}"; do
     src="${src%%::*}"
     src="${src##*/}"
@@ -177,7 +187,8 @@ build() {
     -D vulkan-layers=device-select,overlay
     -D vulkan-beta=true
     -D opencl-spirv=true
-    -D buildtype=release
+    #-D buildtype=release
+    --buildtype=release
     --wrap-mode=nofallback
   )
 
@@ -185,17 +196,17 @@ build() {
   CFLAGS+=' -g0 -O2 '
   CXXFLAGS+=' -g0 -O2 '
 
-  meson setup --prefix /usr --libexecdir lib --sbindir bin --auto-features enabled --wrap-mode nodownload -D b_lto=false -D b_pie=true -D python.bytecompile=1 mesa build "${meson_options[@]}"
+  arch-meson mesa build "${meson_options[@]}"
   meson configure build --no-pager # Print config
-  $NINJAFLAGS meson compile -C build
+  #$NINJAFLAGS meson compile -C build
 
   # fake installation to be seperated into packages
   # outside of fakeroot but mesa doesn't need to chown/mod
-  DESTDIR="${srcdir}/fakeinstall" meson install -C build
+  #DESTDIR="${srcdir}/fakeinstall" meson install -C build
 
   export BINDGEN_EXTRA_CLANG_ARGS="-m32"
 
-  meson setup --prefix /usr --libexecdir lib --sbindir bin --auto-features enabled --wrap-mode nodownload -D b_lto=false -D b_pie=true -D python.bytecompile=1 lib32-mesa lib32-build --cross-file lib32 "${meson_options[@]}"
+  arch-meson lib32-mesa lib32-build --cross-file lib32 "${meson_options[@]}"
   meson configure lib32-build --no-pager # Print config
 
   #if [ ! -f "build/build.ninja.bak" ]; then
