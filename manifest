@@ -216,6 +216,7 @@ export AUR_PACKAGES="\
 	rtcqs \
 "
 
+# files in /etc/extensions will be auto-mounted
 export SERVICES="\
 	NetworkManager \
 	avahi-daemon \
