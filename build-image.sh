@@ -44,7 +44,7 @@ mkdir -p ${MOUNT_PATH}
 
 fallocate -l ${SIZE} ${BUILD_IMG}
 mkfs.btrfs -f ${BUILD_IMG}
-mount -t btrfs -o loop,nodatacow,noatime,compress-force=zstd:3 ${BUILD_IMG} ${MOUNT_PATH}
+mount -t btrfs -o loop,nodatacow,noatime,compress-force=zstd:15 ${BUILD_IMG} ${MOUNT_PATH}
 btrfs subvolume create ${BUILD_PATH}
 
 # copy the makepkg.conf into chroot
@@ -260,6 +260,10 @@ rm -rf ${BUILD_IMG}
 if [ -z "${NO_COMPRESS}" ]; then
 	sha256sum ${IMG_FILENAME} > sha256sum.txt
 	cat sha256sum.txt
+
+	# Display info on GitHub CI
+	sha256sum ${IMG_FILENAME}
+	ls -lah ${IMG_FILENAME}
 
 	# Move the image to the output directory, if one was specified.
 	if [ -n "${OUTPUT_DIR}" ]; then
