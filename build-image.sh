@@ -94,6 +94,10 @@ sed -i '/CheckSpace/s/^/#/g' /etc/pacman.conf
 # update package databases
 pacman --noconfirm -Syy
 
+# chimeraos requires ladspa-host and the default provider is ardour
+# install qtractor to spare space
+pacman --noconfirm -Sy qtractor
+
 # install kernel package
 if [ "$KERNEL_PACKAGE_ORIGIN" == "local" ] ; then
 	pacman --noconfirm -U --overwrite '*' \
@@ -105,9 +109,14 @@ fi
 # Install custom mesa
 mkdir /mesa
 mv own_pkgs/lib32-mesa*.pkg.tar* /mesa
+mv own_pkgs/lib32-libva-mesa /mesa
+mv own_pkgs/lib32-vulkan /mesa
+mv own_pkgs/lib32-opencl /mesa
 mv own_pkgs/mesa*.pkg.tar* /mesa
+mv own_pkgs/libva-mesa /mesa
+mv own_pkgs/vulkan /mesa
+mv own_pkgs/opencl /mesa
 yes|pacman -U --overwrite '*' /mesa/*
-rm -rf /mesa
 
 # install own override packages
 pacman --noconfirm -U --overwrite '*' /own_pkgs/*
@@ -202,6 +211,7 @@ fi
 
 # clean up/remove unnecessary files
 rm -rf \
+/mesa
 /own_pkgs \
 /extra_pkgs \
 /extra_certs \

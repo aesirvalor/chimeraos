@@ -149,22 +149,6 @@ export PACKAGE_OVERRIDES="\
 	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/6.1.81.nrflx3-1-fix/linux-neroreflex-6.1.81.nrflx3-1-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/6.1.81.nrflx3-1-fix/linux-neroreflex-api-headers-6.1.81.nrflx3-1-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/6.1.81.nrflx3-1-fix/linux-neroreflex-headers-6.1.81.nrflx3-1-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/lib32-libva-mesa-driver-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/lib32-mesa-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/lib32-mesa-vdpau-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/lib32-opencl-clover-mesa-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/lib32-opencl-rusticl-mesa-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/lib32-vulkan-mesa-layers-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/lib32-vulkan-radeon-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/lib32-vulkan-swrast-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/libva-mesa-driver-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/mesa-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/mesa-vdpau-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/opencl-clover-mesa-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/opencl-rusticl-mesa-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/vulkan-mesa-layers-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/vulkan-radeon-24.0.2-3-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/vulkan-swrast-24.0.2-3-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/asusctl/releases/download/5.0.7-1/asusctl-5.0.7-1-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/asusctl/releases/download/5.0.7-1/rog-control-center-5.0.7-1-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/repos/2023/06/28/extra/os/x86_64/libretro-pcsx2-11900-2-x86_64.pkg.tar.zst \
@@ -216,7 +200,6 @@ export AUR_PACKAGES="\
 	rtcqs \
 "
 
-# files in /etc/extensions will be auto-mounted
 export SERVICES="\
 	NetworkManager \
 	avahi-daemon \
@@ -309,6 +292,9 @@ postinstallhook() {
 
 	# remove r8169 blacklist in /usr, leave it up to the user
 	rm -rf /usr/lib/modprobe.d/r8168-dkms.conf
+
+	# files in /etc/extensions will be auto-mounted by systemd-sysext
+	mkdir /etc/extensions
 
 	echo "" >> /etc/environment
 	echo "SDL_GAMECONTROLLER_IGNORE_DEVICES=\"0x045E/0x028E\"" >> /etc/environment
