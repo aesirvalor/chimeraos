@@ -133,11 +133,7 @@ export PACKAGES="\
 	plasma-desktop \
 	kwin \
 	sddm \
-	milou \
 	ark \
-	kate \
-	kcalc \
-	kdeconnect \
 	kdenetwork-filesharing \
 	dolphin-plugins \
 	qjackctl \
@@ -150,9 +146,9 @@ export PACKAGES="\
 "
 
 export PACKAGE_OVERRIDES="\
-	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/v6.1.80.nrflx3-5/linux-neroreflex-6.1.80.nrflx3-5-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/v6.1.80.nrflx3-5/linux-neroreflex-api-headers-6.1.80.nrflx3-5-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/v6.1.80.nrflx3-5/linux-neroreflex-headers-6.1.80.nrflx3-5-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/6.1.81.nrflx3-1-fix/linux-neroreflex-6.1.81.nrflx3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/6.1.81.nrflx3-1-fix/linux-neroreflex-api-headers-6.1.81.nrflx3-1-x86_64.pkg.tar.zst \
+	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/6.1.81.nrflx3-1-fix/linux-neroreflex-headers-6.1.81.nrflx3-1-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/lib32-libva-mesa-driver-24.0.2-3-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/lib32-mesa-24.0.2-3-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/mesa-chimeraos/releases/download/v24.0.2-3/lib32-mesa-vdpau-24.0.2-3-x86_64.pkg.tar.zst \
@@ -249,6 +245,11 @@ export FILES_TO_DELETE="\
 "
 
 postinstallhook() {
+	# Remove discover software
+	pacman -R discover
+	#yes|pacman -Scc
+	ls -lah /var/cache/pacman
+
 	mkdir -p /etc/sddm.conf.d
 	echo "[General]" > /etc/sddm.conf.d/steam-deckify.conf
 	echo "DisplayServer=wayland" >> /etc/sddm.conf.d/steam-deckify.conf
@@ -312,9 +313,4 @@ postinstallhook() {
 	echo "" >> /etc/environment
 	echo "# This makes a few games (like Ori and the blind forest) crash as startup for not being able to create the rendering surface" >> /etc/environment
 	echo "#ENABLE_GAMESCOPE_WSI=1" >> /etc/environment
-
-	# Remove discover software
-	pacman -R discover
-
-	yes|pacman -Scc
 }
