@@ -23,6 +23,7 @@ export PACKAGES="\
 	flex \
 	bison \
 	bc \
+	m4 \
 	accountsservice \
 	alsa-firmware \
 	alsa-utils \
