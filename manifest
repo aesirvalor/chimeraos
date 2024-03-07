@@ -228,6 +228,7 @@ export SERVICES="\
 	powerstation \
 	sshd \
 	systemd-timesyncd \
+	systemd-sysext \
 	sddm \
 "
 
