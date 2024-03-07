@@ -230,17 +230,18 @@ export FILES_TO_DELETE="\
 "
 
 postinstallhook() {
-	# Remove discover software
-	pacman -R --noconfirm discover
-	#yes|pacman -Scc
-	ls -lah /var/cache/pacman
-
 	# chimeraos requires ladspa-host and the default provider is ardour
 	# qtractor is installed to spare space so it's safe to remove ardour
-	pacman -R --noconfirm ardour
+	# pacman -R --noconfirm ardour # turns out ardour doesn't get installed when qtractor is being specified
 
 	## now all orphan dependencies must be removed (to spare space)
 	pacman -Qqd | pacman -Rsu - 
+
+	# Remove discover software
+	pacman -R --noconfirm discover
+	
+	#yes|pacman -Scc
+	ls -lah /var/cache/pacman
 
 	mkdir -p /etc/sddm.conf.d
 	echo "[General]" > /etc/sddm.conf.d/steam-deckify.conf
