@@ -207,7 +207,7 @@ fi
 
 # clean up/remove unnecessary files
 rm -rf \
-/mesa
+/mesa \
 /own_pkgs \
 /extra_pkgs \
 /extra_certs \
