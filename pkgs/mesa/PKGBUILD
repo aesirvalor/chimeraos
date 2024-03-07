@@ -13,6 +13,14 @@ pkgname=(
   'libva-mesa-driver'
   'mesa-vdpau'
   'mesa'
+  'lib32-vulkan-mesa-layers'
+  'lib32-opencl-clover-mesa'
+  'lib32-opencl-rusticl-mesa'
+  'lib32-vulkan-radeon'
+  'lib32-vulkan-swrast'
+  'lib32-libva-mesa-driver'
+  'lib32-mesa-vdpau'
+  'lib32-mesa'
 )
 pkgver=24.0.2
 pkgrel=3
@@ -48,6 +56,30 @@ makedepends=(
   'wayland'
   'xcb-util-keysyms'
   'zstd'
+
+  'lib32-flex'
+  'lib32-clang'
+  'lib32-expat'
+  'lib32-libdrm'
+  'lib32-libelf'
+  'lib32-libglvnd'
+  'lib32-libva'
+  'lib32-libvdpau'
+  'lib32-libx11'
+  'lib32-libxdamage'
+  'lib32-libxml2'
+  'lib32-libxrandr'
+  'lib32-libxshmfence'
+  'lib32-libxxf86vm'
+  'lib32-llvm'
+  'lib32-lm_sensors'
+  'lib32-rust-libs'
+  'lib32-spirv-llvm-translator'
+  'lib32-spirv-tools'
+  'lib32-systemd'
+  'lib32-vulkan-icd-loader'
+  'lib32-wayland'
+  'lib32-zstd'
 
   # shared between mesa and lib32-mesa
   'clang'
@@ -87,8 +119,13 @@ validpgpkeys=('8703B6700E7EE06D7A39B8D6EDAE37B02CEB490D'  # Emil Velikov <emil.l
 
 prepare() {
   dirname=$(find -maxdepth 1 -type d | grep "mesa")
+
+  cp -r $dirname lib32-mesa
+  cd lib32-mesa
+
   cp -r $dirname mesa
   cd mesa
+
   rm -rf "$dirname"
 
   # Include package release in version string so Chromium invalidates
@@ -155,6 +192,28 @@ build() {
   # fake installation to be seperated into packages
   # outside of fakeroot but mesa doesn't need to chown/mod
   DESTDIR="${srcdir}/fakeinstall" meson install -C build
+
+  export BINDGEN_EXTRA_CLANG_ARGS="-m32"
+
+  meson setup --prefix /usr --libexecdir lib --sbindir bin --auto-features enabled --wrap-mode nodownload -D b_lto=false -D b_pie=true -D python.bytecompile=1 lib32-mesa lib32-build --cross-file lib32 "${meson_options[@]}"
+  meson configure lib32-build --no-pager # Print config
+
+  #if [ ! -f "build/build.ninja.bak" ]; then
+  #  cp build/build.ninja build/build.ninja.back
+  #fi
+
+  # Evil: Hack build to make proc-macro crate native
+  # Should become unnecessary with Meson 1.3
+  #sed -e '/^rule rust_COMPILER$/irule rust_HACK\n command = rustc -C linker=gcc $ARGS $in\n deps = gcc\n depfile = $targetdep\n description = Compiling native Rust source $in\n' \
+  #    -e '/^build src\/gallium\/frontends\/rusticl\/librusticl_proc_macros\.so:/s/rust_COMPILER/rust_HACK/' \
+  #    -e '/^ LINK_ARGS =/s/ src\/gallium\/frontends\/rusticl\/librusticl_proc_macros\.so//' \
+  #    -i build/build.ninja
+
+  $NINJAFLAGS meson compile -C lib32-build
+
+  # fake installation to be seperated into packages
+  # outside of fakeroot but mesa doesn't need to chown/mod
+  DESTDIR="${srcdir}/lib32-fakeinstall" meson install -C lib32-build
 }
 
 _install() {
@@ -165,9 +224,14 @@ _install() {
     install -m755 -d "${dir}"
     mv -v "${src}" "${dir}/"
   done
-}
 
-_libdir=usr/lib
+  for src; do
+    f="${src#lib32-fakeinstall/}"
+    dir="${pkgdir}/${f%/*}"
+    install -m755 -d "${dir}"
+    mv -v "${src}" "${dir}/"
+  done
+}
 
 package_vulkan-mesa-layers() {
   pkgdesc="Mesa's Vulkan layers"
@@ -183,7 +247,7 @@ package_vulkan-mesa-layers() {
 
   _install fakeinstall/usr/share/vulkan/explicit_layer.d
   _install fakeinstall/usr/share/vulkan/implicit_layer.d
-  _install fakeinstall/$_libdir/libVkLayer_*.so
+  _install fakeinstall/usr/lib/libVkLayer_*.so
   _install fakeinstall/usr/bin/mesa-overlay-control.py
 
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
@@ -207,8 +271,8 @@ package_opencl-clover-mesa() {
   conflicts=('opencl-mesa')
 
   _install fakeinstall/etc/OpenCL/vendors/mesa.icd
-  _install fakeinstall/$_libdir/libMesaOpenCL*
-  _install fakeinstall/$_libdir/gallium-pipe
+  _install fakeinstall/usr/lib/libMesaOpenCL*
+  _install fakeinstall/usr/lib/gallium-pipe
 
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
@@ -232,7 +296,7 @@ package_opencl-rusticl-mesa() {
   conflicts=('opencl-mesa')
 
   _install fakeinstall/etc/OpenCL/vendors/rusticl.icd
-  _install fakeinstall/$_libdir/libRusticlOpenCL*
+  _install fakeinstall/usr/lib/libRusticlOpenCL*
 
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
@@ -255,7 +319,7 @@ package_vulkan-radeon() {
 
   _install fakeinstall/usr/share/drirc.d/00-radv-defaults.conf
   _install fakeinstall/usr/share/vulkan/icd.d/radeon_icd*.json
-  _install fakeinstall/$_libdir/libvulkan_radeon.so
+  _install fakeinstall/usr/lib/libvulkan_radeon.so
 
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
@@ -279,7 +343,7 @@ package_vulkan-swrast() {
   provides=('vulkan-driver')
 
   _install fakeinstall/usr/share/vulkan/icd.d/lvp_icd*.json
-  _install fakeinstall/$_libdir/libvulkan_lvp.so
+  _install fakeinstall/usr/lib/libvulkan_lvp.so
 
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
@@ -297,7 +361,7 @@ package_libva-mesa-driver() {
   )
   provides=('libva-driver')
 
-  _install fakeinstall/$_libdir/dri/*_drv_video.so
+  _install fakeinstall/usr/lib/dri/*_drv_video.so
 
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
@@ -315,7 +379,7 @@ package_mesa-vdpau() {
   )
   provides=('vdpau-driver')
 
-  _install fakeinstall/$_libdir/vdpau
+  _install fakeinstall/usr/lib/vdpau
 
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
@@ -350,30 +414,241 @@ package_mesa() {
   _install fakeinstall/usr/share/glvnd/egl_vendor.d/50_mesa.json
 
   # ati-dri, nouveau-dri, intel-dri, svga-dri, swrast, swr
-  _install fakeinstall/$_libdir/dri/*_dri.so
+  _install fakeinstall/usr/lib/dri/*_dri.so
 
   # only needed when bellagio is enabled
-  # _install fakeinstall/$_libdir/bellagio
+  # _install fakeinstall/usr/lib/bellagio
 
-  _install fakeinstall/$_libdir/d3d
-  _install fakeinstall/$_libdir/lib{gbm,glapi}.so*
-  _install fakeinstall/$_libdir/libOSMesa.so*
+  _install fakeinstall/usr/lib/d3d
+  _install fakeinstall/usr/lib/lib{gbm,glapi}.so*
+  _install fakeinstall/usr/lib/libOSMesa.so*
   
   # only needed when gallium-xa is enabled
-  #_install fakeinstall/$_libdir/libxatracker.so*
+  #_install fakeinstall/usr/lib/libxatracker.so*
 
   _install fakeinstall/usr/include
-  _install fakeinstall/$_libdir/pkgconfig
+  _install fakeinstall/usr/lib/pkgconfig
 
   # libglvnd support
-  _install fakeinstall/$_libdir/libGLX_mesa.so*
-  _install fakeinstall/$_libdir/libEGL_mesa.so*
+  _install fakeinstall/usr/lib/libGLX_mesa.so*
+  _install fakeinstall/usr/lib/libEGL_mesa.so*
 
   # indirect rendering
-  ln -sr "$pkgdir"/$_libdir/libGLX_{mesa,indirect}.so.0
+  ln -sr "$pkgdir"/usr/lib/libGLX_{mesa,indirect}.so.0
 
   # make sure there are no files left to install
   find fakeinstall -depth -print0 | xargs -0 rmdir
+
+  install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
+}
+
+
+package_lib32-vulkan-mesa-layers() {
+  pkgdesc="Mesa's Vulkan layers (32-bit)"
+  depends=(
+    'lib32-libdrm'
+    'lib32-libxcb'
+    'lib32-wayland'
+
+    'vulkan-mesa-layers'
+  )
+  conflicts=('lib32-vulkan-mesa-layer')
+  replaces=('lib32-vulkan-mesa-layer')
+
+  rm -rv lib32-fakeinstall/usr/share/vulkan/explicit_layer.d
+  rm -rv lib32-fakeinstall/usr/share/vulkan/implicit_layer.d
+  _install lib32-fakeinstall/usr/lib32/libVkLayer_*.so
+  rm -v lib32-fakeinstall/usr/bin/mesa-overlay-control.py
+
+  install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
+}
+
+package_lib32-opencl-clover-mesa() {
+  pkgdesc="OpenCL support with clover for mesa drivers (32-bit)"
+  depends=(
+    'lib32-clang'
+    'lib32-expat'
+    'lib32-libdrm'
+    'lib32-libelf'
+    'lib32-spirv-llvm-translator'
+    'lib32-zstd'
+
+    'libclc'
+    'opencl-clover-mesa'
+  )
+  optdepends=('opencl-headers: headers necessary for OpenCL development')
+  provides=('lib32-opencl-driver')
+  replaces=("lib32-opencl-mesa<=23.1.4-1")
+  conflicts=('lib32-opencl-mesa')
+
+  rm -v lib32-fakeinstall/etc/OpenCL/vendors/mesa.icd
+  _install lib32-fakeinstall/usr/lib32/libMesaOpenCL*
+  _install lib32-fakeinstall/usr/lib32/gallium-pipe
+
+  install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
+}
+
+package_lib32-opencl-rusticl-mesa() {
+  pkgdesc="OpenCL support with rusticl for mesa drivers (32-bit)"
+  depends=(
+    'lib32-clang'
+    'lib32-expat'
+    'lib32-libdrm'
+    'lib32-libelf'
+    'lib32-lm_sensors'
+    'lib32-spirv-llvm-translator'
+    'lib32-zstd'
+
+    'libclc'
+    'opencl-rusticl-mesa'
+  )
+  optdepends=('opencl-headers: headers necessary for OpenCL development')
+  provides=('lib32-opencl-driver')
+  replaces=("lib32-opencl-mesa<=23.1.4-1")
+  conflicts=('lib32-opencl-mesa')
+
+  rm -v lib32-fakeinstall/etc/OpenCL/vendors/rusticl.icd
+  _install lib32-fakeinstall/usr/lib32/libRusticlOpenCL*
+
+  install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
+}
+
+package_lib32-vulkan-radeon() {
+  pkgdesc="Radeon's Vulkan mesa driver (32-bit)"
+  depends=(
+    'lib32-libdrm'
+    'lib32-libelf'
+    'lib32-libx11'
+    'lib32-libxshmfence'
+    'lib32-llvm-libs'
+    'lib32-systemd'
+    'lib32-wayland'
+    'lib32-xcb-util-keysyms'
+    'lib32-zstd'
+
+    'vulkan-radeon'
+  )
+  optdepends=('lib32-vulkan-mesa-layers: additional vulkan layers')
+  provides=('lib32-vulkan-driver')
+
+  rm -v lib32-fakeinstall/usr/share/drirc.d/00-radv-defaults.conf
+  _install lib32-fakeinstall/usr/share/vulkan/icd.d/radeon_icd*.json
+  _install lib32-fakeinstall/usr/lib32/libvulkan_radeon.so
+
+  install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
+}
+
+package_lib32-vulkan-swrast() {
+  pkgdesc="Vulkan software rasteriser driver (32-bit)"
+  depends=(
+    'lib32-libdrm'
+    'lib32-libx11'
+    'lib32-libxshmfence'
+    'lib32-llvm-libs'
+    'lib32-systemd'
+    'lib32-wayland'
+    'lib32-xcb-util-keysyms'
+    'lib32-zstd'
+  )
+  optdepends=('lib32-vulkan-mesa-layers: additional vulkan layers')
+  conflicts=('lib32-vulkan-mesa')
+  replaces=('lib32-vulkan-mesa')
+  provides=('lib32-vulkan-driver')
+
+  _install lib32-fakeinstall/usr/share/vulkan/icd.d/lvp_icd*.json
+  _install lib32-fakeinstall/usr/lib32/libvulkan_lvp.so
+
+  install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
+}
+
+package_lib32-libva-mesa-driver() {
+  pkgdesc="VA-API drivers (32-bit)"
+  depends=(
+    'lib32-expat'
+    'lib32-libdrm'
+    'lib32-libelf'
+    'lib32-libx11'
+    'lib32-libxshmfence'
+    'lib32-llvm-libs'
+    'lib32-zstd'
+  )
+  provides=('lib32-libva-driver')
+
+  _install lib32-fakeinstall/usr/lib32/dri/*_drv_video.so
+
+  install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
+}
+
+package_lib32-mesa-vdpau() {
+  pkgdesc="VDPAU drivers (32-bit)"
+  depends=(
+    'lib32-expat'
+    'lib32-libdrm'
+    'lib32-libelf'
+    'lib32-libx11'
+    'lib32-libxshmfence'
+    'lib32-llvm-libs'
+    'lib32-zstd'
+  )
+  provides=('lib32-vdpau-driver')
+
+  _install lib32-fakeinstall/usr/lib32/vdpau
+
+  install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
+}
+
+package_lib32-mesa() {
+  depends=(
+    'lib32-libdrm'
+    'lib32-libelf'
+    'lib32-libglvnd'
+    'lib32-libunwind'
+    'lib32-libxdamage'
+    'lib32-libxshmfence'
+    'lib32-libxxf86vm'
+    'lib32-llvm-libs'
+    'lib32-lm_sensors'
+    'lib32-vulkan-icd-loader'
+    'lib32-wayland'
+    'lib32-zstd'
+
+    'mesa'
+  )
+  optdepends=(
+    'opengl-man-pages: for the OpenGL API man pages'
+  )
+  provides=(
+    'lib32-mesa-libgl'
+    'lib32-opengl-driver'
+  )
+  conflicts=('lib32-mesa-libgl')
+  replaces=('lib32-mesa-libgl')
+
+  rm -v lib32-fakeinstall/usr/share/drirc.d/00-mesa-defaults.conf
+  rm -v lib32-fakeinstall/usr/share/glvnd/egl_vendor.d/50_mesa.json
+
+  # ati-dri, nouveau-dri, intel-dri, svga-dri, swrast, swr
+  _install lib32-fakeinstall/usr/lib32/dri/*_dri.so
+
+  _install lib32-fakeinstall/usr/lib32/d3d
+  _install lib32-fakeinstall/usr/lib32/lib{gbm,glapi}.so*
+  _install lib32-fakeinstall/usr/lib32/libOSMesa.so*
+
+  # only needed when gallium-xa is enabled
+  #_install lib32-fakeinstall/usr/lib32/libxatracker.so*
+
+  rm -rv lib32-fakeinstall/usr/include
+  _install lib32-fakeinstall/usr/lib32/pkgconfig
+
+  # libglvnd support
+  _install lib32-fakeinstall/usr/lib32/libGLX_mesa.so*
+  _install lib32-fakeinstall/usr/lib32/libEGL_mesa.so*
+
+  # indirect rendering
+  ln -sr "$pkgdir"/usr/lib32/libGLX_{mesa,indirect}.so.0
+
+  # make sure there are no files left to install
+  #find lib32-fakeinstall -depth -print0 | xargs -0 rmdir
 
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
 }
