@@ -235,10 +235,10 @@ postinstallhook() {
 	# pacman -R --noconfirm ardour # turns out ardour doesn't get installed when qtractor is being specified
 
 	## now all orphan dependencies must be removed (to spare space)
-	pacman -Qqd | pacman -Rsu - 
+	#pacman -Qqd | pacman -Rsu - 
 
 	# Remove discover software
-	pacman -R --noconfirm discover
+	pacman -Rs --noconfirm discover
 	
 	#yes|pacman -Scc
 	ls -lah /var/cache/pacman
