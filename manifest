@@ -133,7 +133,6 @@ export PACKAGES="\
 	plasma \
 	plasma-desktop \
 	kcalc \
-	knote \
 	kwin \
 	sddm \
 	ark \
