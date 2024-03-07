@@ -15,14 +15,14 @@ export KERNEL_PACKAGE_ORIGIN="local"
 
 #removed packages:
 # broadcom-wl-dkms \
+# flex \
+# bison \
+# bc \
 export PACKAGES="\
 	cmake \
 	clang \
 	llvm \
 	lld \
-	flex \
-	bison \
-	bc \
 	accountsservice \
 	alsa-firmware \
 	alsa-utils \
@@ -90,7 +90,7 @@ export PACKAGES="\
 	noto-fonts-emoji \
 	nss-mdns \
 	openal \
-	openrazer-daemon \
+	openrazer-driver-dkms \
 	openssh \
 	p7zip \
 	pipewire \
