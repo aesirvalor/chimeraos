@@ -133,6 +133,7 @@ export PACKAGES="\
 	zip \
 	plasma \
 	plasma-desktop \
+	kate \
 	kcalc \
 	kwin \
 	sddm \
