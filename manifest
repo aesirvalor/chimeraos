@@ -92,6 +92,7 @@ export PACKAGES="\
 	nss-mdns \
 	openal \
 	openrazer-daemon \
+	polychromatic \
 	openssh \
 	p7zip \
 	pipewire \
