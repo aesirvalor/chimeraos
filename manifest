@@ -136,6 +136,8 @@ export PACKAGES="\
 	kate \
 	kcalc \
 	kwin \
+	konsole \
+	yakuake \
 	sddm \
 	ark \
 	kdeconnect \
