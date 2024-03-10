@@ -36,10 +36,4 @@ post_install() {
   fi
   [[ -e "$TMP_PKG" ]] && rm "$TMP_PKG"
   [[ -e "$OUTPUT_FILE" ]] && rm "$OUTPUT_FILE"
-  
-  update_user
-}
-
-post_upgrade() {
-  update_user
 }
