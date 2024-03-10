@@ -41,7 +41,7 @@ RUN sed -i '/BUILDENV/s/check/!check/g' /etc/makepkg.conf && \
 
 RUN sed -i -e 's/-march=x86-64/-march=x86-64-v3/g' /etc/makepkg.conf
 RUN sed -i -e 's/-mtune=generic/-mtune=znver4/g' /etc/makepkg.conf
-RUN sed -i -e 's/-j2/-j$(nproc)/g' /etc/makepkg.conf
+RUN sed -i -e 's/-j2/-j\$\(nproc\)/g' /etc/makepkg.conf
 RUN sed -i -e 's/#MAKEFLAGS/MAKEFLAGS/g' /etc/makepkg.conf
 
 COPY manifest /manifest
