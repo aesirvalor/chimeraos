@@ -6,19 +6,6 @@ msg() {
     printf "${GREEN}==>${ALL_OFF}${BOLD} ${mesg}${ALL_OFF}\n" "$@" >&2
 }
 
-update_user() {
-  # edit user name
-  export LANG=C
-  if VAR=$(id -nu 1000) && [[ ! -z ${VAR} ]]; then
-     msg "Setting User=${VAR} in /etc/sddm.conf.d/steam-deckify.conf"
-  elif VAR=$(id -nu 1001) && [[ ! -z ${VAR} ]]; then
-     msg "Setting User=${VAR} in /etc/sddm.conf.d/steam-deckify.conf"
-  else
-     msg "No user found: setting 'User=' in /etc/sddm.conf.d/steam-deckify.conf"
-  fi
-  sed -ri "s|^(User=).*|User=${VAR}|" /etc/sddm.conf.d/steam-deckify.conf
-}
-
 post_install() {
   # Grab the steam bootstrap for first boot
 
