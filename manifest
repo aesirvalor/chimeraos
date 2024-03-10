@@ -211,6 +211,7 @@ export SERVICES="\
 	avahi-daemon \
 	bluetooth \
 	bluetooth-workaround \
+	cups \
 	fstrim.timer \
 	rogue-enemy \
 	haveged \
