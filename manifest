@@ -150,6 +150,7 @@ export PACKAGES="\
 	pipewire-jack-client \
 	realtime \
 	qtractor \
+	zsh \
 "
 
 export PACKAGE_OVERRIDES="\
@@ -183,6 +184,7 @@ export AUR_PACKAGES="\
 	chimera \
 	chimeraos-device-quirks-git \
 	downgrade \
+	exa \
 	gamescope-session-steam-git \
 	gamescope-session-steam-plus-git \
 	hhfc-git \
@@ -207,6 +209,8 @@ export AUR_PACKAGES="\
 	zenergy-dkms-git \
 	matchbox-keyboard \
 	rtcqs \
+	zsh-theme-powerlevel10k-git \
+	ttf-meslo-nerd-font-powerlevel10k \
 "
 
 export SERVICES="\
