@@ -77,6 +77,8 @@ export PACKAGES="\
 	libcurl-gnutls \
 	libidn11 \
 	libva-vdpau-driver \
+	libvirt \
+	edk2-ovmf \
 	libxcrypt-compat \
 	libxss \
 	linux-firmware \
@@ -228,6 +230,7 @@ export SERVICES="\
 	systemd-timesyncd \
 	systemd-sysext \
 	sddm \
+	libvirtd \
 "
 
 export USER_SERVICES="\
