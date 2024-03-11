@@ -41,6 +41,7 @@ export PACKAGES="\
 	efibootmgr \
 	epiphany \
 	evtest \
+	eza \
 	ffmpeg \
 	file \
 	ffmpegthumbnailer \
@@ -184,7 +185,6 @@ export AUR_PACKAGES="\
 	chimera \
 	chimeraos-device-quirks-git \
 	downgrade \
-	exa \
 	gamescope-session-steam-git \
 	gamescope-session-steam-plus-git \
 	hhfc-git \
