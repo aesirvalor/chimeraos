@@ -141,6 +141,7 @@ export PACKAGES="\
 	konsole \
 	yakuake \
 	sddm \
+	spectacle \
 	ark \
 	kdeconnect \
 	kdenetwork-filesharing \
