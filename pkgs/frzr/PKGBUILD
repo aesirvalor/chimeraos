@@ -9,7 +9,7 @@ url="https://github.com/NeroReflex/frzr"
 license=('MIT')
 depends=('btrfs-progs' 'parted' 'libnewt' 'dosfstools' 'jq' 'util-linux' 'zstd' 'xz')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
-sha256sums=('7169917fbdc02b9bc68981872be24fb6c98a001050f7b00a80842c27df5f69b9')
+sha256sums=('8cce57f0699ce2424beb4fa92d2ab77739a934c2cdbf6669a58ac7a24d5a2378')
 
 package() {
   mkdir -p "$pkgdir/usr/bin"
