@@ -1,7 +1,7 @@
 # Maintainer: Alesh Slovak <aleshslovak@gmail.com>
 
 pkgname=frzr
-pkgver=0.19.5
+pkgver=0.19.6
 pkgrel=1
 pkgdesc="A deployment and update system for read-only btrfs subvolume based operating systems"
 arch=('any')
@@ -9,7 +9,7 @@ url="https://github.com/NeroReflex/frzr"
 license=('MIT')
 depends=('btrfs-progs' 'parted' 'libnewt' 'dosfstools' 'jq' 'util-linux' 'zstd' 'xz')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
-sha256sums=('72b6dacfa4d273ed85753889e162b678d92f19684a01055087c34fdc12d544fa')
+sha256sums=('5d9dfde1c22b8c735c576b15730e943ae0623bcb4529a1514d3ee98e980d13bc')
 
 package() {
   mkdir -p "$pkgdir/usr/bin"
