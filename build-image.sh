@@ -159,12 +159,11 @@ Subsystem	sftp	/usr/lib/ssh/sftp-server
 " > /etc/ssh/sshd_config
 
 echo "
-LABEL=frzr_root	/			btrfs	subvol=deployments/${SYSTEM_NAME}-${VERSION},ro,noatime,nodatacow,discard=async 			0	0
-LABEL=frzr_root	/var		btrfs	subvol=var,rw,noatime,nodatacow,compress=zstd,discard=async									0	0
-LABEL=frzr_root	/home		btrfs	subvol=home,rw,noatime,nodatacow,compress=zstd,discard=async								0	0
-LABEL=frzr_root	/frzr_root	btrfs	subvol=/,rw,noatime,nodatacow,compress=zstd,discard=async									0	0
-LABEL=frzr_efi 	/boot		vfat	rw,noatime,nofail																		0	0
-overlay			/etc		overlay	noauto,x-systemd.automount,lowerdir=/etc,upperdir=/frzr_root/etc,workdir=/frzr_root/.etc	0	0
+LABEL=frzr_root	/			btrfs	subvol=deployments/${SYSTEM_NAME}-${VERSION},ro,noatime,discard=async 		0	0
+LABEL=frzr_root	/var		btrfs	subvol=var,rw,noatime,compress=zstd,discard=async							0	0
+LABEL=frzr_root	/home		btrfs	subvol=home,rw,noatime,nodatacow,discard=async								0	0
+LABEL=frzr_root	/frzr_root	btrfs	subvol=/,rw,noatime,compress=zstd,discard=async								0	0
+LABEL=frzr_efi 	/boot		vfat	rw,noatime,nofail															0	0
 " > /etc/fstab
 
 echo "
@@ -226,6 +225,9 @@ EOF
 # copy files into chroot again
 cp -R rootfs/. ${BUILD_PATH}/
 rm -rf ${BUILD_PATH}/extra_certs
+
+# finally move /etc to /usr/etc so that frzr will use it to deploy a clean /etc subvolume on the final install
+mv ${BUILD_PATH}/etc ${BUILD_PATH}/usr/etc
 
 echo "${SYSTEM_NAME}-${VERSION}" > ${BUILD_PATH}/build_info
 echo "" >> ${BUILD_PATH}/build_info
