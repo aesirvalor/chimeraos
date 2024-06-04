@@ -158,9 +158,9 @@ export PACKAGES="\
 "
 
 export PACKAGE_OVERRIDES="\
-	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/6.1.81.nrflx3-2/linux-neroreflex-6.1.81.nrflx3-2-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/6.1.81.nrflx3-2/linux-neroreflex-api-headers-6.1.81.nrflx3-2-x86_64.pkg.tar.zst \
-	https://github.com/rog-ally-gaming/linux-chimeraos/releases/download/6.1.81.nrflx3-2/linux-neroreflex-headers-6.1.81.nrflx3-2-x86_64.pkg.tar.zst \
+	https://github.com/aesirvalor/linux-chimeraos/releases/download/6.1.92.nrflx3-2/linux-neroreflex-6.1.92.nrflx3-2-x86_64.pkg.tar.zst \
+	https://github.com/aesirvalor/linux-chimeraos/releases/download/6.1.92.nrflx3-2/linux-neroreflex-api-headers-6.1.92.nrflx3-2-x86_64.pkg.tar.zst \
+	https://github.com/aesirvalor/linux-chimeraos/releases/download/6.1.92.nrflx3-2/linux-neroreflex-headers-6.1.92.nrflx3-2-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/asusctl/releases/download/5.0.7-1/asusctl-5.0.7-1-x86_64.pkg.tar.zst \
 	https://github.com/rog-ally-gaming/asusctl/releases/download/5.0.7-1/rog-control-center-5.0.7-1-x86_64.pkg.tar.zst \
 	https://archive.archlinux.org/repos/2023/06/28/extra/os/x86_64/libretro-pcsx2-11900-2-x86_64.pkg.tar.zst \
